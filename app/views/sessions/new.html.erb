@@ -1,0 +1,11 @@
+<center>
+<h1>LOGIN</h1>
+
+<%= form_for(:session, url: login_path) do |form| %>
+<%= form.email_field :email, placeholder: 'EMAIL', required: true %>
+<%= form.password_field :password, placeholder: 'ENTER PASSWORD', required: true %>
+<%= form.submit %>
+<% end %>
+
+
+</center>

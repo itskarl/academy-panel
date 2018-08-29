@@ -1,0 +1,20 @@
+<%= form_for @cohort do |form| %>
+<% if cohort.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(cohort.errors.count, "error") %>
+      prohibited this cohort from being saved:</h2>
+
+    <ul>
+      <% cohort.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form.text_field :name, placeholder: "COURSE NAME" %>
+  <%= form.collection_select(:course, Course.all, :id, :name, required: true) %>
+  <%= form.date_field :start_date, required: true %>
+  <%= form.date_field :end_date, required: true %>
+  <%= form.submit %>
+
+<% end %>

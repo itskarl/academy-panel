@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>INSTRUCTORS</h1>
+
+<% @instructors.each do |instructor| %>
+  <tr>
+    <%= instructor.first_name %><br>
+    <%= instructor.last_name %><br>
+    <%= instructor.age %><br>
+    <%= instructor.education_level%><br>
+
+
+    <%= link_to instructor do %>
+    <i class="fas fa-file"></i>
+  <% end %>
+
+  <%= link_to edit_instructor_path(instructor) do %>
+  <i class="fas fa-edit"></i>
+<% end %>
+
+<%= link_to instructor, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+<i class="fas fa-trash-alt"></i>
+<% end %>
+
+<% end %>
+
+<p><%= link_to 'New User', new_instructor_path %></p>

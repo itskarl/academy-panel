@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>STUDENTS</h1>
+
+<% @students.each do |student| %>
+  <tr>
+    <%= student.first_name %><br>
+    <%= student.last_name %><br>
+    <%= student.age %><br>
+    <%= student.education_level%><br>
+
+
+    <%= link_to student do %>
+    <i class="fas fa-file"></i>
+  <% end %>
+
+  <%= link_to edit_student_path(student) do %>
+  <i class="fas fa-edit"></i>
+<% end %>
+
+<%= link_to student, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+<i class="fas fa-trash-alt"></i>
+<% end %>
+
+<% end %>
+
+<p><%= link_to 'New User', new_student_path %></p>

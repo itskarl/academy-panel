@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cohort Name:</strong>
+  <%= @cohort.name %>
+</p>
+
+<p>
+  <strong>COURSE:</strong>
+  <%=  Course.find_by_id(@cohort.course).name %>
+</p>
+
+<p>
+  <strong>START:</strong>
+  <%= @cohort.start_date %>
+</p>
+
+
+<p>
+  <strong>END:</strong>
+  <%= @cohort.end_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_cohort_path(@cohort) %> |
+<%= link_to 'Back', cohorts_path %>

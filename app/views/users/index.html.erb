@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>CURRENT LIST OF USERS</h1>
+
+<% @users.each do |user| %>
+  <tr>
+    <%= user.first_name %><br>
+    <%= user.last_name %><br>
+    <%= user.email %><br>
+    <%= user.password %><br>
+    <%= user.admin %><br>
+    <%= user.student %><br>
+    <%= user.instructor %><br>
+
+    <%= link_to user do %>
+    <i class="fas fa-file"></i>
+  <% end %>
+
+  <%= link_to edit_user_path(user) do %>
+  <i class="fas fa-edit"></i>
+  <% end %>
+
+  <%= link_to user, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+  <i class="fas fa-trash-alt"></i>
+  <% end %>
+
+<% end %>
+
+<p><%= link_to 'New User', new_user_path %></p>

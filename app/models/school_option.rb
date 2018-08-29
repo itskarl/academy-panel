@@ -1,0 +1,2 @@
+class SchoolOption < ApplicationRecord
+end

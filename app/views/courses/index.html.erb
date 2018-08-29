@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>COURSES</h1>
+
+<% @courses.each do |course| %>
+  <tr>
+    <%= course.name %><br>
+    <%= course.hours %><br>
+
+
+    <%= link_to course do %>
+    <i class="fas fa-file"></i>
+  <% end %>
+
+  <%= link_to edit_course_path(course) do %>
+  <i class="fas fa-edit"></i>
+<% end %>
+
+<%= link_to course, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+<i class="fas fa-trash-alt"></i>
+<% end %>
+
+<% end %>
+
+<p><%= link_to 'New Course', new_course_path %></p>

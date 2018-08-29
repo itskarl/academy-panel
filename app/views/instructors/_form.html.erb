@@ -1,0 +1,21 @@
+<%= form_for @instructor do |form| %>
+<% if instructor.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(instructor.errors.count, "error") %>
+      prohibited this instructor from being saved:</h2>
+
+    <ul>
+      <% instructor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form.text_field :first_name, placeholder: "FIRST NAME" %>
+  <%= form.text_field :last_name, placeholder: "LAST NAME" %>
+  <%= form.number_field :age, max: 150 %>
+  <%= form.number_field :salary, min: 1 %>
+  <%= form.select(:education_level, [['No Degrees', 0], ['High School', 1], ['Some College', 2], ['Associate\'s Degree', 2], ['Bachelor\'s Degree', 3], ['Master\'s Degree', 4], ['Doctorate or PhD', 5]]) %>
+  <%= form.submit %>
+
+<% end %>

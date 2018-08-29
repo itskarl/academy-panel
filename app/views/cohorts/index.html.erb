@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>COHORTS</h1>
+
+<% @cohorts.each do |cohort| %>
+  <tr>
+    <%= cohort.name %><br>
+    <%= cohort.start_date %><br>
+      <%= cohort.end_date %><br>
+
+    <%= link_to cohort do %>
+    <i class="fas fa-file"></i>
+  <% end %>
+
+  <%= link_to edit_cohort_path(cohort) do %>
+  <i class="fas fa-edit"></i>
+<% end %>
+
+<%= link_to cohort, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+<i class="fas fa-trash-alt"></i>
+<% end %>
+
+<% end %>
+
+<p><%= link_to 'New Cohort', new_cohort_path %></p>
