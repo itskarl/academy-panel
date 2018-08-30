@@ -20,6 +20,18 @@
   <%= @student.education_level %>
 </p>
 
+<p>
+  <strong>Current Class List:</strong>
+  <% @student.cohorts.each do |x| %>
+  <%= x.name %>
+  <% end %>
+</p>
+
+<h1>add courses</h1>
+<%= form_tag('addcourses', method: 'post') do %>
+<%= collection_select(:cohorts, :cohorts_students, Cohort.all, :id, :name) %>
+<%= submit_tag("ADD COURSES") %>
+<% end %>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
