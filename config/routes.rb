@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :students
-  resources :courses
+  resources :courses do
+   resources :cohorts
+  end
   resources :instructors
   resources :cohorts
 

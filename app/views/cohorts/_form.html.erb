@@ -1,4 +1,4 @@
-<%= form_for @cohort do |form| %>
+<%= form_for([@course, @cohort]) do |form| %>
 <% if cohort.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(cohort.errors.count, "error") %>
@@ -15,6 +15,7 @@
   <%= form.collection_select(:course, Course.all, :id, :name, required: true) %>
   <%= form.date_field :start_date, required: true %>
   <%= form.date_field :end_date, required: true %>
+  'butt'
   <%= form.submit %>
 
 <% end %>

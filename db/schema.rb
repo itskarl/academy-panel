@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2018_08_29_164813) do
     t.string "name"
     t.date "start_date"
     t.date "end_date"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "course"
   end
 
   create_table "cohorts_students", id: false, force: :cascade do |t|
