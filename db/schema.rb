@@ -40,15 +40,12 @@ ActiveRecord::Schema.define(version: 2018_08_29_164813) do
     t.integer "age"
     t.string "education_level"
     t.string "salary"
+    t.string "password"
+    t.string "password_digest"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "school_options", force: :cascade do |t|
-    t.string "name"
-    t.string "school"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["password_digest"], name: "index_instructors_on_password_digest", unique: true
   end
 
   create_table "students", force: :cascade do |t|
@@ -56,21 +53,25 @@ ActiveRecord::Schema.define(version: 2018_08_29_164813) do
     t.string "last_name"
     t.integer "age"
     t.string "education_level"
+    t.string "password"
+    t.string "password_digest"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["password_digest"], name: "index_students_on_password_digest", unique: true
   end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "password"
+    t.string "password_digest"
     t.string "email"
     t.boolean "instructor"
     t.boolean "student"
     t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["password_digest"], name: "index_users_on_password_digest", unique: true
   end

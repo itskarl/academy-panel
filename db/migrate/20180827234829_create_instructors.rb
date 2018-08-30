@@ -6,8 +6,12 @@ class CreateInstructors < ActiveRecord::Migration[5.2]
       t.integer :age
       t.string :education_level
       t.string :salary
+      t.string :password
+      t.string :password_digest
+      t.string :email
 
       t.timestamps
     end
+    add_index :instructors, :password_digest, unique: true
   end
 end
