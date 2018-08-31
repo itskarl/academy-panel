@@ -34,12 +34,15 @@ class StudentsController < ApplicationController
     end
   end
 
+
   def update
     @student.update(student_params)
+    # @student.cohorts << Cohort.find(params[:cohort_ids])
     respond_to do |format|
-      format.html { redirect_to @student, notice: 'Student was successfully updated.' }
+      format.html { redirect_to @student, notice: 'UPDATE SUCESSSSFULLLLLLLLLL' }
     end
   end
+
 
   private
 
