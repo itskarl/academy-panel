@@ -29,6 +29,7 @@
               <li class="menu-item"><%= link_to 'LOG OUT', logout_path, method: :delete %></li>
             <% else %>
               <li class="menu-item"><%= link_to 'REGISTER', new_user_path %></li>
+              <li class="menu-item"><%= link_to 'LOGIN', '/login' %></li>
             <% end %>
           </ul>
         </nav>

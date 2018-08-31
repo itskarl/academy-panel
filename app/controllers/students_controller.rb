@@ -47,6 +47,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+
   def add_email
     @student.update(:email => "#{@student.first_name}.#{@student.last_name}@digi-academy.com")
   end

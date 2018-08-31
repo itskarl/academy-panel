@@ -10,6 +10,12 @@
   <%= @course.hours%>
 </p>
 
+<p>
+  <strong>Cohorts:</strong>
+  <% @course.cohorts.each do |k| %>
+  <%= k.name %>
+  <% end %>
+</p>
 
 
 <%= link_to 'Edit', edit_course_path(@course) %> |

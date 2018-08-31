@@ -30,7 +30,7 @@
 <h1>add courses</h1>
 <%= form_for @student do |f| %>
 <%= f.collection_select(:cohort_ids, Cohort.all, :id, :name) %>
-<%= submit_tag("ADD COURSES") %>
+<%= submit_tag("ADD COURSE") %>
 <% end %>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |

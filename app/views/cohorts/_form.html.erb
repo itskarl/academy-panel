@@ -12,10 +12,9 @@
   <% end %>
 
   <%= form.text_field :name, placeholder: "COURSE NAME" %>
-  <%= form.collection_select(:course, Course.all, :id, :name, required: true) %>
+  <%= form.collection_select(:course_id, Course.all, :id, :name, required: true) %>
   <%= form.date_field :start_date, required: true %>
   <%= form.date_field :end_date, required: true %>
-BUTT
   <%= form.submit %>
 
 <% end %>
