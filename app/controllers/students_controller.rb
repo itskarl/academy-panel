@@ -2,7 +2,6 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   after_action :add_email, only: [:create]
 
-
   def new
     @student = Student.new
   end
@@ -34,14 +33,21 @@ class StudentsController < ApplicationController
     end
   end
 
-
   def update
+
+    cohort_id = params[:student].delete(:cohorts)
+
+  if cohort_id 
+    registration = Registration.create(:cohort_id => cohort_id, :student_id => @student.id)
+  end
+
+
     @student.update(student_params)
-    # @student.cohorts << Cohort.find(params[:cohort_ids])
     respond_to do |format|
       format.html { redirect_to @student, notice: 'UPDATE SUCESSSSFULLLLLLLLLL' }
     end
   end
+
 
 
   private
@@ -53,6 +59,9 @@ class StudentsController < ApplicationController
 
   def add_email
     @student.update(:email => "#{@student.first_name}.#{@student.last_name}@digi-academy.com")
+  end
+
+  def addmore
   end
 
   def student_params

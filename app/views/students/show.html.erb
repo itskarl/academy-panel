@@ -29,7 +29,7 @@
 
 <h1>JOIN A class</h1>
 <%= form_for @student do |f| %>
-<%= f.collection_select(:cohort_ids, Cohort.all, :id, :name) %>
+<%= f.collection_select 'cohort_ids', Cohort.all, :id, :name %>
 <%= submit_tag("ADD COURSE") %>
 <% end %>
 
