@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   after_action :add_email, only: [:create]
 
+
   def new
     @student = Student.new
   end
@@ -51,7 +52,7 @@ class StudentsController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:first_name, :last_name, :age, :education_level, :password,)
+    params.require(:student).permit(:first_name, :last_name, :age, :education_level, :password, :cohort_ids)
   end
 
 end

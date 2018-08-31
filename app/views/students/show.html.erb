@@ -28,8 +28,8 @@
 </p>
 
 <h1>add courses</h1>
-<%= form_tag('addcourses', method: 'post') do %>
-<%= collection_select(:cohorts, :cohorts_students, Cohort.all, :id, :name) %>
+<%= form_for @student do |f| %>
+<%= f.collection_select(:cohort_ids, Cohort.all, :id, :name) %>
 <%= submit_tag("ADD COURSES") %>
 <% end %>
 

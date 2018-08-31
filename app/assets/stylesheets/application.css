@@ -14,90 +14,83 @@
  *= require_self
  */
 
- html {
-   box-sizing: border-box;
-   font-family: 'Open Sans', sans-serif;
- }
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
 
- body {
-   margin: 20px;
- }
+body {
+  margin: 20px;
+}
 
- *, *:before, *:after {
-   box-sizing: inherit;
- }
+.site-header, .site-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- .site-header,
- .site-footer {
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
+.site-header {
+  height: 30px;
+  background-color: #e7eaed;
+}
 
- .site-header {
-   height: 100px;
-   background-color: #e7eaed;
- }
+.site-footer {
+  background-color: #333536;
+  height: 30px;
+  color: #fff;
+}
 
- .site-footer {
-   background-color: #333536;
-   height: 200px;
-   color: #fff;
- }
+.content-area {
+  display: grid;
+  grid-template-columns: 200px calc(100vw - 255px)
+}
 
- .content-area {
-   display: flex;
- }
+.sidebar-area {
+  background-color: #4a98d2;
+  position: relative;
+  width: 200px;
+  padding: 0;
+}
 
- .site-main {
-   width: 75%;
- }
+.menu {
+  padding-top: 0px;
+  list-style-type: none;
+  margin: 0;
+}
 
- .sidebar-area {
-   background-color: #4a98d2;
-   position: relative;
-   width: 290px;
- }
+.menu {
+  padding: 0;
+  list-style-type: none;
+}
 
- .side-navigation.fixed {
-   position: fixed;
-   top: 0;
-   width: 290px;
- }
- .side-navigation.bottom {
-   position: absolute;
-   bottom: 0;
-   top: auto;
-   width: 290px;
- }
- .side-navigation .menu {
-   padding-top: 15px;
-   list-style-type: none;
- }
- .side-navigation .menu-item {
-   position: relative;
- }
- .side-navigation .menu-item:before {
-   content: '';
-   position: absolute;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   width: 0;
-   background-color: #5dbaff;
-   transition: width .3s ease-in;
- }
- .side-navigation .menu-item:hover:before {
-   width: 100%;
- }
- .side-navigation .menu-item a {
-   color: #fff;
-   text-decoration: none;
-   position: relative;
-   display: block;
-   padding: 18px 50px;
- }
+.menu-item {
+  position: relative;
+  height: 30px;
+}
 
- .main-body {
-   overflow: scroll;
- }
+.menu-item a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  height: 30px;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item a:hover {
+  color: #fff;
+  background-color: pink;
+}
+
+.main-body {
+  overflow: scroll;
+  height: calc(100vh - 100px);
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+
+}

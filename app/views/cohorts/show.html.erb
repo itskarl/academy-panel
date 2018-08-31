@@ -21,6 +21,14 @@
   <%= @cohort.end_date %>
 </p>
 
+<p>
+  <strong>STUDENTS</strong>
+  <% @cohort.students.each do |z| %>
+  <%= z.first_name %>
+  <br>
+  <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_cohort_path(@cohort) %> |
 <%= link_to 'Back', cohorts_path %>
