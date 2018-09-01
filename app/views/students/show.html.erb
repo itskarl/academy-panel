@@ -23,15 +23,17 @@
 <p>
   <strong>Current Class List:</strong>
   <% @student.cohorts.each do |x| %>
-  <%= x.name %>
+    <%= link_to "#{x.name}", cohort_path(x.id) %>
   <% end %>
+
+
 </p>
 
 <h1>JOIN A class</h1>
-<%= form_for @student do |f| %>
-<%= f.collection_select 'cohort_ids', Cohort.all, :id, :name %>
+<%= form_tag({controller: "students", action: "update"}, method: "get") %>
+<%= collection_select(:q, :q, Cohort.all, :id, :name ) %>
 <%= submit_tag("ADD COURSE") %>
-<% end %>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
+
+<%= link_to 'Edit', edit_student_path(@student) %>
 <%= link_to 'Back', students_path %>

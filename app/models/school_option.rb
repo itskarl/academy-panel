@@ -1,2 +1,0 @@
-class SchoolOption < ApplicationRecord
-end

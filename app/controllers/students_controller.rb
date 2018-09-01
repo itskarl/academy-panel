@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_student, only: %i[show edit update destroy]
   after_action :add_email, only: [:create]
 
   def new
@@ -15,11 +15,11 @@ class StudentsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def show
-     @student = Student.find(params[:id])
+    @student.cohorts << Cohort.find(params[:q][:q]) if params[:q]
+    @student = Student.find(params[:id])
   end
 
   def index
@@ -34,13 +34,10 @@ class StudentsController < ApplicationController
   end
 
   def update
-
-    cohort_id = params[:student].delete(:cohorts)
-
-  if cohort_id 
-    registration = Registration.create(:cohort_id => cohort_id, :student_id => @student.id)
-  end
-
+    # cohort_id = params[:student].delete(:cohort_ids)
+    # if cohort_id
+    #   @student.cohorts << Cohort.find(1)
+    # end
 
     @student.update(student_params)
     respond_to do |format|
@@ -48,24 +45,19 @@ class StudentsController < ApplicationController
     end
   end
 
-
-
   private
 
   def set_student
     @student = Student.find(params[:id])
   end
 
-
   def add_email
-    @student.update(:email => "#{@student.first_name}.#{@student.last_name}@digi-academy.com")
+    @student.update(email: "#{@student.first_name}.#{@student.last_name}@digi-academy.com")
   end
 
-  def addmore
-  end
+  def addmore; end
 
   def student_params
     params.require(:student).permit(:first_name, :last_name, :age, :education_level, :password, :cohort_ids)
   end
-
 end
