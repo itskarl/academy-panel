@@ -2,14 +2,14 @@ class CohortsController < ApplicationController
   before_action :set_cohort, only: %i[show edit update destroy]
 
   def new
-    @course = Course.find(params[:course_id])
+    @course = Course.find(params[:course_id]) if params[:course_id]
     @cohort = Cohort.new
   end
 
   def create
-    @course = Course.find(params[:course_id])
+    @course = Course.find(params[:cohort][:course_id])
     @cohort = Cohort.new(cohort_params)
-    @cohort.course_id = Course.find(params[:course_id]).id
+    @cohort.course_id = Course.find(params[:cohort][:course_id]).id
 
     if @cohort.save
       respond_to do |format|
@@ -25,6 +25,7 @@ class CohortsController < ApplicationController
   def edit; end
 
   def show
+    @cohort.students << Student.find(params[:q][:student_ids]) if params[:q]
     @cohort = Cohort.find(params[:id])
   end
 

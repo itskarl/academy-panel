@@ -16,11 +16,20 @@
 
 html {
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 body {
+  background: radial-gradient(white, transparent), url('https://images.pexels.com/photos/264635/pexels-photo-264635.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dashboard {
   margin: 20px;
+  box-shadow: 0px 0 10px black;
+  border-radius: 10px;
 }
 
 .site-header, .site-footer {
@@ -31,22 +40,25 @@ body {
 
 .site-header {
   height: 30px;
-  background-color: #e7eaed;
+  background-color: rgba(255, 255, 255, 0.73);
+  border-radius: 10px 10px 0 0;
 }
 
 .site-footer {
-  background-color: #333536;
+  background-color: rgba(255, 255, 255, 0.73);
   height: 30px;
-  color: #fff;
+  color: rgb(46, 46, 46);
+  border-radius: 0 0 10px 10px;
 }
 
 .content-area {
   display: grid;
-  grid-template-columns: 200px calc(100vw - 255px)
+  grid-template-columns: 200px calc(100vw - 255px);
+  background-color: rgba(255, 255, 255, 0.73);
 }
 
 .sidebar-area {
-  background-color: #4a98d2;
+  color: black;
   position: relative;
   width: 200px;
   padding: 0;
@@ -63,13 +75,18 @@ body {
   list-style-type: none;
 }
 
+.profile-pic {
+  /* background-color:rgba(223, 160, 118, 0.41) ; */
+  height: 100px;
+}
+
 .menu-item {
   position: relative;
   height: 30px;
 }
 
 .menu-item a {
-  color: #fff;
+  color: rgb(46, 46, 46);
   text-decoration: none;
   position: relative;
   display: block;
@@ -83,14 +100,48 @@ body {
 
 .menu-item a:hover {
   color: #fff;
-  background-color: pink;
+  background-color:rgba(200, 83, 84, .8);
+}
+
+.menu-item a:hover:before {
+  content: "";
+  position: absolute;
+  right: -15px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 15px solid rgba(200, 83, 84, .8);
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
 }
 
 .main-body {
-  overflow: scroll;
-  height: calc(100vh - 100px);
-  overflow: scroll;
+  min-height: calc(100vh - 140px);
   display: flex;
   flex-direction: column;
+  padding: 20px;
+}
 
+.student-list-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  padding-top: 20px;
+}
+
+.instructor-list-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  padding-top: 20px;
+}
+
+.course-list-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-top: 20px;
+}
+
+.cohort-list-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  padding-top: 20px;
 }

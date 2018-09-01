@@ -1,28 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<h1>STUDENTS LSIT</h1>
+<h1>STUDENTS LIST</h1>
 
-<% @students.each do |student| %>
-  <tr>
-    <%= student.first_name %><br>
-    <%= student.last_name %><br>
-    <%= student.age %><br>
-    <%= student.education_level%><br>
+<div class="student-list-grid">
 
-    <%= link_to student do %>
-    <i class="fas fa-search"></i>
-  <% end %>
+  <div>
+    <b>FIRST NAME</b>
+  </div>
+  <div>
+    <b>LAST NAME</b>
+  </div>
+  <div>
+    <b>AGE</b>
+  </div>
+  <div>
+    <b>EDUCATION</b>
+  </div>
+  <div>
+    <b>ACTIONS</b>
+  </div>
+  <% @students.each do |student| %>
 
-  <%= link_to edit_student_path(student) do %>
-  <i class="fas fa-edit"></i>
-<% end %>
+    <div><%= student.first_name %></div>
+    <div><%= student.last_name %></div>
+    <div><%= student.age %></div>
+    <div><%= student.education_level%></div>
 
-<%= link_to student, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
-<i class="fas fa-trash-alt"></i>
-<% end %>
+    <div><%= link_to student do %>
+      SHOW
+    <% end %>
+&nbsp;
+    <%= link_to edit_student_path(student) do %>
+    EDIT
+    <% end %>
+&nbsp;
+    <%= link_to student, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+    DELETE
+    <% end %>
+    </div>
 
+    <% end %>
+    </div>
 
-
-<% end %>
-
-<p><%= link_to 'New User', new_student_path %></p>
+<p><%= link_to 'ADD STUDENT', new_student_path %></p>

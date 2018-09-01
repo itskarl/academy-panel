@@ -5,19 +5,26 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
   <body>
+    <div class="dashboard">
 
-    <header class="site-header">
-      Site header
-    </header>
-    <div class="content-area">
-      <aside class="sidebar-area">
-        <nav class="side-navigation">
-          <ul class="menu">
+      <header class="site-header">
+        Site header
+      </header>
+      <div class="content-area">
+        <aside class="sidebar-area">
+          <nav class="side-navigation">
+            <ul class="menu">
+              <li class="profile-pic"><%= link_to '#' do %>
+                pic
+
+              <% end %>
+            </li>
             <li class="menu-item"><%= link_to 'STUDENTS', students_path %></li>
             <li class="menu-item"><%= link_to 'COURSES', courses_path %></li>
             <li class="menu-item"><%= link_to 'COHORTS', cohorts_path %></li>
@@ -41,6 +48,6 @@
     <footer class="site-footer">
       FOOT!
     </footer>
-
-  </body>
+  </div>
+</body>
 </html>

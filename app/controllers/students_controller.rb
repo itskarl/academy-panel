@@ -34,10 +34,6 @@ class StudentsController < ApplicationController
   end
 
   def update
-    # cohort_id = params[:student].delete(:cohort_ids)
-    # if cohort_id
-    #   @student.cohorts << Cohort.find(1)
-    # end
 
     @student.update(student_params)
     respond_to do |format|

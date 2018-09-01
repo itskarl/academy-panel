@@ -1,25 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>COURSES</h1>
+<h1>COURSE LIST</h1>
+
+
+<div class="course-list-grid">
+
+  <div>
+    <b>COURSE NAME</b>
+  </div>
+  <div>
+    <b>HOURS</b>
+  </div>
+  <div>
+    <b>ACTIONS</b>
+  </div>
 
 <% @courses.each do |course| %>
-  <tr>
-    <%= course.name %><br>
-    <%= course.hours %><br>
+
+  <div>  <%= course.name %></div>
+    <div><%= course.hours %></div>
 
 
-    <%= link_to course do %>
-    <i class="fas fa-file"></i>
+  <div>  <%= link_to course do %>
+    SHOW
   <% end %>
-
+&nbsp;
   <%= link_to edit_course_path(course) do %>
-  <i class="fas fa-edit"></i>
+  EDIT
 <% end %>
-
+&nbsp;
 <%= link_to course, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
-<i class="fas fa-trash-alt"></i>
-<% end %>
+DELETE
+<% end %></div>
 
 <% end %>
-
+</div>
 <p><%= link_to 'New Course', new_course_path %></p>

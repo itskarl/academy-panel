@@ -16,7 +16,7 @@
   <%= form.password_field :password, placeholder: "PASSWORD" %>
 
   <%= form.number_field :age, max: 150 %>
-  <%= form.select(:education_level, [['No Degrees', 0], ['High School', 1], ['Some College', 2], ['Associate\'s Degree', 2], ['Bachelor\'s Degree', 3], ['Master\'s Degree', 4], ['Doctorate or PhD', 5]]) %>
+  <%= form.select(:education_level, [['High School'], ['College'], ['Master\'s Degree'], ['Doctorate or PhD']]) %>
   <%= form.submit %>
 
 <% end %>

@@ -2,22 +2,54 @@
 
 <h1>COHORTS</h1>
 
-<% @cohorts.each do |cohort| %>
-  <tr>
-    <%= cohort.name %><br>
-    <%= cohort.start_date %><br>
-      <%= cohort.end_date %><br>
+<div class="cohort-list-grid">
+  <div>
+    <b>COURSE</b>
+  </div>
+  <div>
+    <b>COHORT SECTION</b>
+  </div>
+  <div>
+    <b>START DATE</b>
+  </div>
+  <div>
+    <b>END DATE</b>
+  </div>
+  <div>
+    <b>ACTIONS</b>
+  </div>
 
-    <%= link_to cohort do %>
-    <i class="fas fa-file"></i>
+  <% @cohorts.each do |cohort| %>
+
+    <div>
+      <%= cohort.course.name %>
+    </div>
+    <div>
+      <%= cohort.name %>
+    </div>
+
+    <div>
+      <%= cohort.start_date %>
+    </div>
+    <div>
+      <%= cohort.end_date %>
+    </div>
+
+    <div>
+      <%= link_to cohort do %>
+      SHOW
+    <% end %>
+    &nbsp;
+    <%= link_to edit_cohort_path(cohort) do %>
+    EDIT
   <% end %>
-
-  <%= link_to edit_cohort_path(cohort) do %>
-  <i class="fas fa-edit"></i>
+  &nbsp;
+  <%= link_to cohort, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+  DELETE
 <% end %>
-
-<%= link_to cohort, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
-<i class="fas fa-trash-alt"></i>
-<% end %>
+</div>
 
 <% end %>
+</div>
+
+<%= link_to 'New Cohort', new_cohort_path %>

@@ -29,11 +29,11 @@
   <% end %>
 </p>
 
-<h1>add cohorts</h1>
-<%= form_for @cohort do |f| %>
-<%= f.collection_select(:student_ids, Student.all, :id, :first_name) %>
-<%= submit_tag("ADD student") %>
-<% end %>
+<h1>add student</h1>
+
+<%= form_tag({controller: :cohorts, action: :update}, method: :get)%>
+<%= collection_select(:q, :student_ids, Student.all, :id, :full_name) %>
+<%= submit_tag("ADD COURSE") %>
 
 
 <%= link_to 'Edit', edit_cohort_path(@cohort) %> |

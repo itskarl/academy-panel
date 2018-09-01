@@ -1,27 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<h1>INSTRUCTORS</h1>
+<h1>INSTRUCTORS LIST</h1>
 
-<% @instructors.each do |instructor| %>
-  <tr>
-    <%= instructor.first_name %><br>
-    <%= instructor.last_name %><br>
-    <%= instructor.age %><br>
-    <%= instructor.education_level%><br>
+<div class="instructor-list-grid">
 
+  <div>
+    <b>FIRST NAME</b>
+  </div>
+  <div>
+    <b>LAST NAME</b>
+  </div>
+  <div>
+    <b>AGE</b>
+  </div>
+  <div>
+    <b>EDUCATION</b>
+  </div>
+  <div>
+    <b>SALARY</b>
+  </div>
+  <div>
+    <b>ACTIONS</b>
+  </div>
 
-    <%= link_to instructor do %>
-    <i class="fas fa-file"></i>
-  <% end %>
+  <% @instructors.each do |instructor| %>
 
-  <%= link_to edit_instructor_path(instructor) do %>
-  <i class="fas fa-edit"></i>
+    <div><%= instructor.first_name %></div>
+    <div><%= instructor.last_name %></div>
+    <div><%= instructor.age %></div>
+    <div><%= instructor.education_level%></div>
+
+    <div><%= instructor.salary %></div>
+    <div><%= link_to instructor do %>
+      SHOW
+    <% end %>
+&nbsp;
+    <%= link_to edit_instructor_path(instructor) do %>
+    EDIT
+    <% end %>
+&nbsp;
+    <%= link_to instructor, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+    DELETE
+    <% end %>
+    </div>
+
 <% end %>
-
-<%= link_to instructor, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
-<i class="fas fa-trash-alt"></i>
-<% end %>
-
-<% end %>
-
+  </div>
 <p><%= link_to 'New User', new_instructor_path %></p>

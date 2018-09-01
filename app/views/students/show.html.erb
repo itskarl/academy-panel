@@ -22,8 +22,8 @@
 
 <p>
   <strong>Current Class List:</strong>
-  <% @student.cohorts.each do |x| %>
-    <%= link_to "#{x.name}", cohort_path(x.id) %>
+  <% @student.cohorts.uniq.each do |x| %>
+    <%= link_to "#{x.name}", cohort_path(x.id) %><br>
   <% end %>
 
 
