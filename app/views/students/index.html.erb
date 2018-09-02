@@ -4,21 +4,22 @@
 
 <div class="student-list-grid">
 
-  <div>
-    <b>FIRST NAME</b>
+  <div class="title-row">
+    <%= link_to "FIRST NAME", :controller => "students", :sort => "first_name" %>
   </div>
-  <div>
-    <b>LAST NAME</b>
+  <div class="title-row">
+    <%= link_to "LAST NAME", :controller => "students", :sort => "last_name" %>
   </div>
-  <div>
-    <b>AGE</b>
+  <div class="title-row">
+    <%= link_to "AGE", :controller => "students", :sort => "age" %>
   </div>
-  <div>
-    <b>EDUCATION</b>
+  <div class="title-row">
+    <%= link_to "EDUCATION", :controller => "students", :sort => "education_level" %>
   </div>
-  <div>
-    <b>ACTIONS</b>
+  <div class="title-row">
+    ACTIONS
   </div>
+
   <% @students.each do |student| %>
 
     <div><%= student.first_name %></div>

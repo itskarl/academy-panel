@@ -30,7 +30,11 @@ class CohortsController < ApplicationController
   end
 
   def index
-    @cohorts = Cohort.all
+    if params[:sort]
+      @cohorts = Cohort.all.order("#{params[:sort]} ASC")
+    else
+      @cohorts = Cohort.all
+    end
   end
 
   def destroy

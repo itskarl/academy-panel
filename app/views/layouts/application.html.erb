@@ -20,34 +20,54 @@
         <aside class="sidebar-area">
           <nav class="side-navigation">
             <ul class="menu">
+              <div class="no-overflow-box">
               <li class="profile-pic"><%= link_to '#' do %>
                 pic
-
               <% end %>
+            </div>
             </li>
-            <li class="menu-item"><%= link_to 'STUDENTS', students_path %></li>
-            <li class="menu-item"><%= link_to 'COURSES', courses_path %></li>
-            <li class="menu-item"><%= link_to 'COHORTS', cohorts_path %></li>
-            <li class="menu-item"><%= link_to 'INSTRUCTORS', instructors_path %></li>
-
-            <% if logged_in? %>
-              you are logged in btw.
-              <br>
-              <li class="menu-item"><%= link_to 'LOG OUT', logout_path, method: :delete %></li>
-            <% else %>
-              <li class="menu-item"><%= link_to 'REGISTER', new_user_path %></li>
-              <li class="menu-item"><%= link_to 'LOGIN', '/login' %></li>
+            <li class="menu-item"><%= link_to students_path do %>
+              <i class="fas fa-user-graduate"></i>
+              &nbsp;&nbsp;&nbsp;&nbsp;STUDENTS
             <% end %>
-          </ul>
-        </nav>
-      </aside>
-      <div class="main-body">
-        <%=yield %>
-      </div>
-    </div>
-    <footer class="site-footer">
-      FOOT!
-    </footer>
-  </div>
+
+          </li>
+          <li class="menu-item"><%= link_to courses_path do%>
+            <i class="fas fa-chalkboard"></i>
+            &nbsp; &nbsp;COURSES
+          <% end %>
+        </li>
+
+        <li class="menu-item"><%= link_to cohorts_path do%>
+          <i class="fas fa-users"></i>
+          &nbsp; &nbsp;COHORTS
+        <% end %>
+      </li>
+
+      <li class="menu-item"><%= link_to instructors_path do%>
+        <i class="fas fa-chalkboard-teacher"></i>
+        &nbsp; &nbsp;INSTRUCTORS
+      <% end %>
+    </li>
+
+    <% if logged_in? %>
+      you are logged in btw.
+      <br>
+      <li class="menu-item"><%= link_to 'LOG OUT', logout_path, method: :delete %></li>
+    <% else %>
+      <li class="menu-item"><%= link_to 'REGISTER', new_user_path %></li>
+      <li class="menu-item"><%= link_to 'LOGIN', '/login' %></li>
+    <% end %>
+  </ul>
+</nav>
+</aside>
+<div class="main-body">
+<%=yield %>
+</div>
+</div>
+<footer class="site-footer">
+FOOT!
+</footer>
+</div>
 </body>
 </html>

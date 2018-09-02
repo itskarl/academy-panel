@@ -23,7 +23,11 @@ class InstructorsController < ApplicationController
   end
 
   def index
-    @instructors = Instructor.all
+    if params[:sort]
+      @instructors = Instructor.all.order("#{params[:sort]} ASC")
+    else
+      @instructors = Instructor.all
+    end
   end
 
   def destroy

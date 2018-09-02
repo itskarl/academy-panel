@@ -4,22 +4,22 @@
 
 <div class="instructor-list-grid">
 
-  <div>
-    <b>FIRST NAME</b>
+  <div class="title-row">
+    <%= link_to "FIRST NAME", :controller => "instructors", :sort => "first_name" %>
   </div>
-  <div>
-    <b>LAST NAME</b>
+  <div class="title-row">
+    <%= link_to "LAST NAME", :controller => "instructors", :sort => "last_name" %>
   </div>
-  <div>
-    <b>AGE</b>
+  <div class="title-row">
+    <%= link_to "AGE", :controller => "instructors", :sort => "age" %>
   </div>
-  <div>
-    <b>EDUCATION</b>
+  <div class="title-row">
+    <%= link_to "EDUCATION LEVEL", :controller => "instructors", :sort => "education_level" %>
   </div>
-  <div>
-    <b>SALARY</b>
+  <div class="title-row">
+    <%= link_to "SALARY", :controller => "instructors", :sort => "salary" %>
   </div>
-  <div>
+  <div class="title-row">
     <b>ACTIONS</b>
   </div>
 
@@ -30,7 +30,7 @@
     <div><%= instructor.age %></div>
     <div><%= instructor.education_level%></div>
 
-    <div><%= instructor.salary %></div>
+    <div><%= number_to_currency(instructor.salary) %></div>
     <div><%= link_to instructor do %>
       SHOW
     <% end %>

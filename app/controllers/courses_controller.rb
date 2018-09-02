@@ -22,7 +22,13 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.all
+    if params[:sort] == "hours"
+      @courses = Course.all.order('hours ASC')
+    elsif params[:sort] == "course"
+      @courses = Course.all.order('name ASC')
+    else
+      @courses = Course.all
+    end
   end
 
   def destroy

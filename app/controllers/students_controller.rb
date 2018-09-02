@@ -23,7 +23,11 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    if params[:sort]
+      @students = Student.all.order("#{params[:sort]} ASC")
+    else
+      @students = Student.all
+    end
   end
 
   def destroy
@@ -34,7 +38,6 @@ class StudentsController < ApplicationController
   end
 
   def update
-
     @student.update(student_params)
     respond_to do |format|
       format.html { redirect_to @student, notice: 'UPDATE SUCESSSSFULLLLLLLLLL' }

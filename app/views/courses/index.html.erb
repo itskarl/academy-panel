@@ -5,14 +5,14 @@
 
 <div class="course-list-grid">
 
-  <div>
-    <b>COURSE NAME</b>
+  <div class="title-row">
+    <%= link_to "COURSE NAME", :controller => "courses", :sort => "course" %>
   </div>
-  <div>
-    <b>HOURS</b>
+  <div class="title-row">
+    <%= link_to "HOURS", :controller => "courses", :sort => "hours" %>
   </div>
-  <div>
-    <b>ACTIONS</b>
+  <div class="title-row">
+    ACTIONS
   </div>
 
 <% @courses.each do |course| %>

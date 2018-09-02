@@ -3,20 +3,20 @@
 <h1>COHORTS</h1>
 
 <div class="cohort-list-grid">
-  <div>
-    <b>COURSE</b>
+  <div class="title-row">
+    <%= link_to "COURSE", :controller => "cohorts", :sort => "course_id" %>
   </div>
-  <div>
-    <b>COHORT SECTION</b>
+  <div class="title-row">
+    <%= link_to "COHORT SECTION", :controller => "cohorts", :sort => "name" %>
   </div>
-  <div>
-    <b>START DATE</b>
+  <div class="title-row">
+    <%= link_to "START DATE", :controller => "cohorts", :sort => "start_date" %>
   </div>
-  <div>
-    <b>END DATE</b>
+  <div class="title-row">
+    <%= link_to "END DATE", :controller => "cohorts", :sort => "end_date" %>
   </div>
-  <div>
-    <b>ACTIONS</b>
+  <div class="title-row">
+    ACTIONS
   </div>
 
   <% @cohorts.each do |cohort| %>

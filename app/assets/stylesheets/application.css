@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  background: radial-gradient(white, transparent), url('https://images.pexels.com/photos/264635/pexels-photo-264635.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
+  background: radial-gradient(white, transparent), url('https://images.unsplash.com/photo-1529461908528-599f5865091e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9d7c42b4a47eed36c34364d765aca0af&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,6 +42,9 @@ body {
   height: 30px;
   background-color: rgba(255, 255, 255, 0.73);
   border-radius: 10px 10px 0 0;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-color: coral;
 }
 
 .site-footer {
@@ -76,8 +79,11 @@ body {
 }
 
 .profile-pic {
-  /* background-color:rgba(223, 160, 118, 0.41) ; */
-  height: 100px;
+  background-color: rgba(226, 145, 240, 0.41);
+  border-radius: 50%;
+  margin: -40px 0 0 -30px;
+  height: 200px;
+  width: 200px;
 }
 
 .menu-item {
@@ -96,11 +102,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-content: flex-start;
+  padding-left: 40px;
 }
 
 .menu-item a:hover {
-  color: #fff;
-  background-color:rgba(200, 83, 84, .8);
+  color: white;
+  background-color: rgba(65, 212, 159, 0.38);
 }
 
 .menu-item a:hover:before {
@@ -110,16 +118,17 @@ body {
   bottom: 0;
   width: 0;
   height: 0;
-  border-left: 15px solid rgba(200, 83, 84, .8);
+  border-left: 15px solid rgba(65, 212, 159, 0.38);
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
 }
 
 .main-body {
-  min-height: calc(100vh - 140px);
+  height: calc(100vh - 143px);
   display: flex;
   flex-direction: column;
   padding: 20px;
+  overflow-x: auto;
 }
 
 .student-list-grid {
@@ -127,11 +136,23 @@ body {
   grid-template-columns: auto auto auto auto auto;
   padding-top: 20px;
 }
+.student-list-grid div {
+  border-width: 0 0 1px 0;
+  border-style: dotted;
+  border-color: rgba(69, 75, 108, 0.3);
+  padding: 5px;
+}
 
 .instructor-list-grid {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
   padding-top: 20px;
+}
+.instructor-list-grid div {
+  border-width: 0 0 1px 0;
+  border-style: dotted;
+  border-color: rgba(69, 75, 108, 0.3);
+  padding: 5px;
 }
 
 .course-list-grid {
@@ -139,9 +160,33 @@ body {
   grid-template-columns: auto auto auto;
   padding-top: 20px;
 }
+.course-list-grid div {
+  border-width: 0 0 1px 0;
+  border-style: dotted;
+  border-color: rgba(69, 75, 108, 0.3);
+  padding: 5px;
+}
 
 .cohort-list-grid {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   padding-top: 20px;
+}
+.cohort-list-grid div {
+  border-width: 0 0 1px 0;
+  border-style: dotted;
+  border-color: rgba(69, 75, 108, 0.3);
+  padding: 5px;
+}
+
+.no-overflow-box {
+  overflow: hidden;
+}
+
+.title-row  {
+  margin: 5px 0 10px 0;
+  padding: 5px;
+  border-width: 0 0 1px 0 !important;
+  border-style: solid  !important;
+  border-color: rgba(69, 75, 108, 0.8) !important;
 }
