@@ -9,14 +9,48 @@
         <li><%= message %></li>
       <% end %>
     </ul>
-  <% end %>
+  </div>
+<% end %>
+<div class="form-row">
+  <div class='form-symbol'>
+    <i class="fas fa-signature"></i>
+  </div>
 
-  <%= form.text_field :first_name, placeholder: "FIRST NAME" %>
-  <%= form.text_field :last_name, placeholder: "LAST NAME" %>
-  <%= form.password_field :password, placeholder: "PASSWORD" %>
+  <div>
+    <%= form.text_field :first_name, placeholder: "FIRST NAME" %>
+  </div>
+</div>
+<div class="form-row">
+  <div class='form-symbol'>
+    <i class="fas fa-font"></i>
+  </div>
+  <div>
+    <%= form.text_field :last_name, placeholder: "LAST NAME" %>
+  </div>
+</div>
+<div class="form-row">
+  <div class='form-symbol'>
+    <i class="fas fa-unlock-alt"></i>
+  </div>
+  <div>
+    <%= form.password_field :password, placeholder: "PASSWORD" %>
+  </div>
+</div>
+<div class="form-row">
+  <div class='form-symbol'>
+    <i class="fas fa-calendar-alt"></i>
+  </div>
+  <div>
+    <%= form.number_field :age, max: 150 %>
+  </div>
+</div>
+<div class="form-row">
+  <div class='form-symbol'>
+    <i class="fas fa-graduation-cap"></i>
+  </div>
+  <div><%= form.select(:education_level, [['High School'], ['College'], ['Master\'s Degree'], ['Doctorate']]) %></div>
+</div>
 
-  <%= form.number_field :age, max: 150 %>
-  <%= form.select(:education_level, [['High School'], ['College'], ['Master\'s Degree'], ['Doctorate or PhD']]) %>
-  <%= form.submit %>
+<div><%= form.submit %></div>
 
 <% end %>

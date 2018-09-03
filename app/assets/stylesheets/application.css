@@ -14,16 +14,121 @@
  *= require_self
  */
 
+:root {
+   --main-text: #536b78;
+   --secondary-color: #637081;
+   --accent-color: #7c98b3;
+   --accent-color-2: #accbe1;
+   --soft-color: #cee5f2;
+ }
+
 html {
   box-sizing: border-box;
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
 body {
-  background: radial-gradient(white, transparent), url('https://images.unsplash.com/photo-1529461908528-599f5865091e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9d7c42b4a47eed36c34364d765aca0af&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb');
+  background: url('https://wallpapertag.com/wallpaper/full/0/b/a/371175-free-download-blurry-background-3840x2160-lockscreen.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--main-text);
+  text-decoration: overline;
+}
+
+/*
+FORM STYLING
+FORM STYLING
+FORM STYLING
+*/
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--soft-color);
+  align-items: center;
+  width: 300px;
+  padding: 15px;
+  box-shadow: black;
+}
+
+input {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: var(--main-text);
+  border-style: none;
+  width: 200px;
+  height: 20px;
+  border-radius: 0px 8px 8px 0px;
+  font-size: 14px;
+  padding: 0 15px 0 15px;
+  margin: 5px 0 5px 0;
+}
+
+input[type=submit] {
+  height: 20px;
+  background-color: var(--accent-color);
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+}
+
+input[type=submit]:hover {
+  background-color: var(--accent-color-2);
+}
+
+select {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: var(--main-text);
+  border-style: none;
+  width: 230px;
+  height: 20px;
+  border-radius: 0;
+  font-size: 14px;
+  padding: 0 15px 0 10px;
+  margin: 5px 0 5px 0;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+}
+
+.form-symbol {
+  background-color: var(--accent-color);
+  color: var(--soft-color);
+  height:20px;
+  width: 20px;
+  border-radius: 8px 0 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 12px;
+  padding-right: 8px;
+
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--soft-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
 }
 
 .dashboard {
@@ -43,8 +148,8 @@ body {
   background-color: rgba(255, 255, 255, 0.73);
   border-radius: 10px 10px 0 0;
   border-style: solid;
-  border-width: 0 0 2px 0;
-  border-color: coral;
+  border-width: 0 0 1px 0;
+  border-color: var(--main-text);
 }
 
 .site-footer {
@@ -61,7 +166,6 @@ body {
 }
 
 .sidebar-area {
-  color: black;
   position: relative;
   width: 200px;
   padding: 0;
@@ -79,11 +183,12 @@ body {
 }
 
 .profile-pic {
-  background-color: rgba(226, 145, 240, 0.41);
+  background: var(--secondary-color);
   border-radius: 50%;
   margin: -40px 0 0 -30px;
   height: 200px;
   width: 200px;
+
 }
 
 .menu-item {
@@ -92,7 +197,7 @@ body {
 }
 
 .menu-item a {
-  color: rgb(46, 46, 46);
+  color: var(--main-text);
   text-decoration: none;
   position: relative;
   display: block;
@@ -107,8 +212,10 @@ body {
 }
 
 .menu-item a:hover {
-  color: white;
-  background-color: rgba(65, 212, 159, 0.38);
+  color: rgb(36, 38, 32);
+  background-color: var(--accent-color-2);
+  background: linear-gradient(0.25turn, transparent, var(--accent-color-2));
+  transition-duration: .3s;
 }
 
 .menu-item a:hover:before {
@@ -118,12 +225,15 @@ body {
   bottom: 0;
   width: 0;
   height: 0;
-  border-left: 15px solid rgba(65, 212, 159, 0.38);
+  border-left: 15px solid var(--accent-color-2);
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
+    transition-duration: .3s;
 }
 
 .main-body {
+  color: var(--main-text);
+  line-height: 1em;
   height: calc(100vh - 143px);
   display: flex;
   flex-direction: column;
@@ -142,7 +252,6 @@ body {
   border-color: rgba(69, 75, 108, 0.3);
   padding: 5px;
 }
-
 .instructor-list-grid {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
@@ -188,5 +297,10 @@ body {
   padding: 5px;
   border-width: 0 0 1px 0 !important;
   border-style: solid  !important;
-  border-color: rgba(69, 75, 108, 0.8) !important;
+  border-color: var(--secondary-color) !important;
 }
+
+/* .student-list-grid div:nth-last-child(5n+1) {
+    background-color: red;
+    padding-bottom: 40px;
+} */

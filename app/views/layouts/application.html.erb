@@ -14,24 +14,42 @@
     <div class="dashboard">
 
       <header class="site-header">
-        Site header
+        ADMIN PANEL
       </header>
       <div class="content-area">
         <aside class="sidebar-area">
           <nav class="side-navigation">
             <ul class="menu">
               <div class="no-overflow-box">
-              <li class="profile-pic"><%= link_to '#' do %>
+              <div class="profile-pic">
+                <%= link_to '#' do %>
                 pic
               <% end %>
             </div>
+            <div class="greeting">
+              <% if logged_in? %>
+              <p>Welcome,
+                <%= current_user.first_name.capitalize %>
+
+              </p>
+              <% end %>
+            </div>
+            </div>
             </li>
+            <% if logged_in? %>
+            <li class="menu-item">
+              <%= link_to user_path(current_user.id) do %>
+              <i class="fas fa-user"></i>
+              &nbsp;&nbsp;&nbsp;&nbsp;<%= current_user.first_name.upcase %>
+              <% end %>
+            </li>
+            <%end %>
+
             <li class="menu-item"><%= link_to students_path do %>
               <i class="fas fa-user-graduate"></i>
               &nbsp;&nbsp;&nbsp;&nbsp;STUDENTS
             <% end %>
-
-          </li>
+            </li>
           <li class="menu-item"><%= link_to courses_path do%>
             <i class="fas fa-chalkboard"></i>
             &nbsp; &nbsp;COURSES
@@ -51,9 +69,13 @@
     </li>
 
     <% if logged_in? %>
-      you are logged in btw.
-      <br>
-      <li class="menu-item"><%= link_to 'LOG OUT', logout_path, method: :delete %></li>
+
+      <li class="menu-item"><%= link_to logout_path, method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i>
+          &nbsp;&nbsp;&nbsp;LOG OUT
+        <% end %>
+      </li>
+
     <% else %>
       <li class="menu-item"><%= link_to 'REGISTER', new_user_path %></li>
       <li class="menu-item"><%= link_to 'LOGIN', '/login' %></li>

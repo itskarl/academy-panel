@@ -16,7 +16,7 @@
     <%= link_to "END DATE", :controller => "cohorts", :sort => "end_date" %>
   </div>
   <div class="title-row">
-    ACTIONS
+
   </div>
 
   <% @cohorts.each do |cohort| %>
@@ -29,10 +29,10 @@
     </div>
 
     <div>
-      <%= cohort.start_date %>
+      <%= cohort.start_date.strftime('%b %d, %Y') %>
     </div>
     <div>
-      <%= cohort.end_date %>
+      <%= cohort.end_date.strftime('%b %d, %Y') %>
     </div>
 
     <div>

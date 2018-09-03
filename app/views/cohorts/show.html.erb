@@ -7,8 +7,15 @@
 
 <p>
   <strong>COURSE:</strong>
-  <%=  Course.find_by_id(@cohort.course).name %>
+  <%=  @cohort.course.name %>
 </p>
+
+<p>
+  <strong>INSTRUCTOR:</strong>
+  <%=  @cohort.instructor.full_name if @cohort.instructor %>
+</p>
+
+
 
 <p>
   <strong>START:</strong>
@@ -28,6 +35,14 @@
   <br>
   <% end %>
 </p>
+
+<h1>assign instructor</h1>
+
+<%= form_for @cohort do |form| %>
+<%= form.collection_select(:instructor_id, Instructor.all, :id, :full_name) %>
+<%= form.submit %>
+<% end %>
+
 
 <h1>add student</h1>
 

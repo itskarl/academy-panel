@@ -23,6 +23,13 @@
   <%= @instructor.education_level %>
 </p>
 
+<p>
+  <strong>Cohort</strong>
+  <% @instructor.cohorts.each do |z| %>
+  <%= z.name %>
+  <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_instructor_path(@instructor) %> |
 <%= link_to 'Back', instructors_path %>

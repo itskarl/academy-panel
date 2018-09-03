@@ -9,6 +9,7 @@
         <li><%= message %></li>
       <% end %>
     </ul>
+  </div>
   <% end %>
 
   <%= form.text_field :first_name, placeholder: "FIRST NAME" %>
@@ -16,7 +17,7 @@
   <%= form.password_field :password, placeholder: "PASSWORD" %>
   <%= form.number_field :age, max: 150 %>
   <%= form.number_field :salary, min: 1 %>
-  <%= form.select(:education_level, [['No Degrees', 0], ['High School', 1], ['Some College', 2], ['Associate\'s Degree', 2], ['Bachelor\'s Degree', 3], ['Master\'s Degree', 4], ['Doctorate or PhD', 5]]) %>
-  <%= form.submit %>
+  <%= form.select(:education_level, [['High School'], ['College'], ['Master\'s Degree'], ['Doctorate']]) %>
+    <%= form.submit %>
 
 <% end %>
