@@ -24,11 +24,16 @@
 </p>
 
 <p>
-  <strong>Cohort</strong>
+  <strong>Cohorts</strong>
   <% @instructor.cohorts.each do |z| %>
   <%= z.name %>
   <% end %>
 </p>
+
+<h1>add cohorts</h1>
+<%= form_tag({controller: :instructors, action: :update}, method: :get)%>
+<%= collection_select(:q, :cohort_ids, Cohort.all, :id, :name) %>
+<%= submit_tag('ADD COHORT') %>
 
 
 <%= link_to 'Edit', edit_instructor_path(@instructor) %> |

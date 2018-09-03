@@ -10,12 +10,41 @@
       <% end %>
     </ul>
   </div>
-  <% end %>
+<% end %>
 
+<div class="form-row">
+  <div class="form-symbol">
+    <i class="fas fa-font"></i>
+  </div>
   <%= form.text_field :name, placeholder: "COURSE NAME" %>
+</div>
+
+<div> COURSE SECTION </div>
+<div class="form-row">
+  <div class="form-symbol">
+    <i class="fas fa-chalkboard"></i>
+  </div>
   <%= form.collection_select(:course_id, Course.all, :id, :name, required: true) %>
+</div>
+
+<div> START DATE</div>
+<div class="form-row">
+  <div class="form-symbol">
+    <i class="fas fa-calendar-plus"></i>
+  </div>
   <%= form.date_field :start_date, required: true %>
+</div>
+
+<div> END DATE </div>
+<div class="form-row">
+  <div class="form-symbol">
+    <i class="fas fa-calendar-check"></i>
+  </div>
   <%= form.date_field :end_date, required: true %>
+</div>
+
+<div class="form-row">
   <%= form.submit %>
+</div>
 
 <% end %>

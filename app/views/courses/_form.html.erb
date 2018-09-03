@@ -10,10 +10,20 @@
       <% end %>
     </ul>
   </div>
-  <% end %>
+<% end %>
 
+<div class="form-row">
+  <div class="form-symbol"><i class="fas fa-pen"></i></div>
   <%= form.text_field :name, placeholder: "COURSE NAME" %>
-  <%= form.number_field :hours %>
-  <%= form.submit %>
+</div>
 
+<div>COURSE HOURS</div>
+<div class="form-row">
+  <div class="form-symbol"><i class="fas fa-clock"></i></div>
+  <%= form.number_field :hours, placeholder: "COURSE HOURS"  %>
+</div>
+
+<div class="form-row">
+  <%= form.submit %>
+</div>
 <% end %>

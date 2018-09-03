@@ -1,6 +1,13 @@
-<h1>EDIT INSTRUCTOR @instructor.name</h1>
+<div class="edit-page">
 
-<%= render 'form', instructor: @instructor %>
+  <h2>EDIT INSTRUCTOR: <%= @instructor.full_name.upcase %></h2>
 
-<%= link_to 'Show', @instructor %> |
-<%= link_to 'Back', instructors_path %>
+  <%= render 'form', instructor: @instructor %>
+  <div>
+    <p>
+      <%= link_to 'Show', @instructor %>
+      |
+      <%= link_to 'Back', instructors_path %>
+    </p>
+  </div>
+</div>

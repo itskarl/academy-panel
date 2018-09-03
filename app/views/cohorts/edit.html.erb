@@ -1,6 +1,10 @@
-<h1>EDIT COHORT @cohort.name</h1>
+<div class="edit-page">
+  <h2>EDIT COHORT: </h2><h3><%= @cohort.name.upcase %></h3>
 
-<%= render 'form', cohort: @cohort %>
-
-<%= link_to 'Show', @cohort %> |
-<%= link_to 'Back', cohorts_path %>
+  <%= render 'form', cohort: @cohort %>
+  <br>
+  <div><p>
+  <%= link_to 'Show', @cohort %> |
+  <%= link_to 'Back', cohorts_path %></p>
+</div>
+</div>

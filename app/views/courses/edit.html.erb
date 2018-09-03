@@ -1,6 +1,9 @@
-<h1>EDIT COURSE @course.name</h1>
+<div class="edit-page">
+<h2>EDIT COURSE:<br></h2><h3> <%= @course.name %></h3>
 
 <%= render 'form', course: @course %>
-
+<div><p>
 <%= link_to 'Show', @course %> |
 <%= link_to 'Back', courses_path %>
+</p></div>
+</div>

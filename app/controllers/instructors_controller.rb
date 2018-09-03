@@ -19,6 +19,7 @@ class InstructorsController < ApplicationController
   end
 
   def show
+    @instructor.cohorts << Cohort.find(params[:q][:cohort_ids]) if params[:q]
      @instructor = Instructor.find(params[:id])
   end
 

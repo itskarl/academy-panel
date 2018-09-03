@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<div class="page-title-row">
+
 <h1>COHORTS</h1>
+
+<div class="add-button">
+<%= link_to new_cohort_path do %> ADD COHORT &nbsp; <i class="fas fa-chalkboard"></i>&nbsp;&#43;
+<% end %>
+</div>
+
+</div>
+
 
 <div class="cohort-list-grid">
   <div class="title-row">
@@ -51,5 +61,3 @@
 
 <% end %>
 </div>
-
-<%= link_to 'New Cohort', new_cohort_path %>

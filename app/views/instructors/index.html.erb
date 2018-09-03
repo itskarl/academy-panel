@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>INSTRUCTORS LIST</h1>
+<div class="page-title-row">
+
+<h1>INSTRUCTORS</h1>
+
+<div class="add-button">
+<%= link_to new_instructor_path do %> ADD INSTRUCTOR &nbsp; <i class="fas fa-chalkboard-teacher"></i>&nbsp;&#43;
+<% end %>
+</div>
+
+</div>
 
 <div class="instructor-list-grid">
 
@@ -20,7 +29,7 @@
     <%= link_to "SALARY", :controller => "instructors", :sort => "salary" %>
   </div>
   <div class="title-row">
-    
+
   </div>
 
   <% @instructors.each do |instructor| %>
@@ -46,4 +55,3 @@
 
 <% end %>
   </div>
-<p><%= link_to 'New User', new_instructor_path %></p>

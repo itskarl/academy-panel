@@ -41,14 +41,21 @@
     <i class="fas fa-calendar-alt"></i>
   </div>
   <div>
-    <%= form.number_field :age, max: 150 %>
+    <%= form.number_field :age, max: 150, placeholder: "AGE" %>
   </div>
+</div>
+<div class="">
+  HIGHEST LEVEL OF EDUCATION
 </div>
 <div class="form-row">
   <div class='form-symbol'>
     <i class="fas fa-graduation-cap"></i>
   </div>
-  <div><%= form.select(:education_level, [['High School'], ['College'], ['Master\'s Degree'], ['Doctorate']]) %></div>
+
+  <div>
+    <%= form.select(:education_level, [['High School'], ['College'], ['Master\'s Degree'], ['Doctorate']]) %>
+  </div>
+
 </div>
 
 <div><%= form.submit %></div>

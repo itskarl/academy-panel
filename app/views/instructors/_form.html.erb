@@ -10,14 +10,48 @@
       <% end %>
     </ul>
   </div>
-  <% end %>
+<% end %>
 
+<div class="form-row">
+  <div class="form-symbol">
+    <i class="fas fa-signature"></i>
+  </div>
   <%= form.text_field :first_name, placeholder: "FIRST NAME" %>
-  <%= form.text_field :last_name, placeholder: "LAST NAME" %>
-  <%= form.password_field :password, placeholder: "PASSWORD" %>
-  <%= form.number_field :age, max: 150 %>
-  <%= form.number_field :salary, min: 1 %>
-  <%= form.select(:education_level, [['High School'], ['College'], ['Master\'s Degree'], ['Doctorate']]) %>
-    <%= form.submit %>
+</div>
 
+<div class="form-row">
+  <div class="form-symbol">
+    <i class="fas fa-font"></i>
+  </div>
+  <%= form.text_field :last_name, placeholder: "LAST NAME" %>
+</div>
+
+<div class="form-row">
+  <div class="form-symbol">
+    <i class="fas fa-unlock-alt"></i>
+  </div>
+  <%= form.password_field :password, placeholder: "PASSWORD" %>
+</div>
+
+<div class="form-row">
+  <div class="form-symbol">
+    <i class="fas fa-calendar-alt"></i>
+  </div>
+  <%= form.number_field :age, max: 150, placeholder: "AGE"  %>
+</div>
+
+<div class="form-row">
+  <div class="form-symbol">
+    <i class="fas fa-file-invoice-dollar"></i>
+  </div>
+  <%= form.number_field :salary, min: 1, placeholder: "SALARY"  %>
+</div>
+
+<div class="form-row">
+  <%= form.select(:education_level, [['High School'], ['College'], ['Master\'s Degree'], ['Doctorate']]) %>
+</div>
+
+<div class="form-row">
+  <%= form.submit %>
+</div>
 <% end %>

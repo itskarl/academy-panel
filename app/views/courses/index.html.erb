@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<div class="page-title-row">
+
 <h1>COURSE LIST</h1>
+
+<div class="add-button">
+<%= link_to new_course_path do %> ADD NEW COURSE &nbsp; <i class="fas fa-book"></i>&nbsp;&#43;
+<% end %>
+</div>
+
+</div>
 
 
 <div class="course-list-grid">
@@ -35,4 +44,3 @@ DELETE
 
 <% end %>
 </div>
-<p><%= link_to 'New Course', new_course_path %></p>

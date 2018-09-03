@@ -1,6 +1,12 @@
-<h1>Users#edit</h1>
+<div class="edit-page">
+  <h2>EDIT: <%=@student.first_name.upcase%>  <%=@student.last_name.upcase%> </h2>
 
-<%= render 'form', student: @student %>
 
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
+  <%= render 'form', student: @student %>
+
+
+  <div><p>
+  <%= link_to 'Show', @student %> |
+  <%= link_to 'Back', students_path %></p>
+</div>
+</div>

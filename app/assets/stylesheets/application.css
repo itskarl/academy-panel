@@ -43,6 +43,10 @@ a:hover {
   text-decoration: overline;
 }
 
+h1, h2, h3 {
+  margin: 5px;
+}
+
 /*
 FORM STYLING
 FORM STYLING
@@ -52,11 +56,12 @@ FORM STYLING
 form {
   display: flex;
   flex-direction: column;
-  background-color: var(--soft-color);
   align-items: center;
   width: 300px;
   padding: 15px;
-  box-shadow: black;
+  border-color: var(--main-text);
+  border-style: solid;
+  border-width: 1px;
 }
 
 input {
@@ -64,20 +69,20 @@ input {
   color: var(--main-text);
   border-style: none;
   width: 200px;
-  height: 20px;
+  height: 30px;
   border-radius: 0px 8px 8px 0px;
-  font-size: 14px;
+  font-size: 16px;
   padding: 0 15px 0 15px;
-  margin: 5px 0 5px 0;
+  margin: 0 0 12px 0;
 }
 
 input[type=submit] {
-  height: 20px;
+  height: 30px;
   background-color: var(--accent-color);
   border-style: none;
-  border-radius: 5px;
+  border-radius: 15px;
   color: white;
-  font-size: 12px;
+  font-size: 1em;
 }
 
 input[type=submit]:hover {
@@ -89,11 +94,24 @@ select {
   color: var(--main-text);
   border-style: none;
   width: 230px;
-  height: 20px;
+  height: 30px;
   border-radius: 0;
-  font-size: 14px;
+  font-size: 16px;
   padding: 0 15px 0 10px;
-  margin: 5px 0 5px 0;
+  margin: 5px 0 15px 0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--accent-color-2);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--accent-color-2);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--accent-color-2);
 }
 
 .form-row {
@@ -102,17 +120,15 @@ select {
 }
 
 .form-symbol {
-  background-color: var(--accent-color);
-  color: var(--soft-color);
-  height:20px;
-  width: 20px;
-  border-radius: 8px 0 0 8px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-size: 12px;
-  padding-right: 8px;
-
+    background-color: var(--accent-color);
+    color: var(--soft-color);
+    height: 30px;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 0 8px 0 8px;
+    margin: 0 0 12px 0;
 }
 
 ::-webkit-scrollbar {
@@ -145,7 +161,7 @@ select {
 
 .site-header {
   height: 30px;
-  background-color: rgba(255, 255, 255, 0.73);
+  background-color: rgba(255, 255, 255, 0.76);
   border-radius: 10px 10px 0 0;
   border-style: solid;
   border-width: 0 0 1px 0;
@@ -153,7 +169,7 @@ select {
 }
 
 .site-footer {
-  background-color: rgba(255, 255, 255, 0.73);
+  background-color: rgba(255, 255, 255, 0.76);
   height: 30px;
   color: rgb(46, 46, 46);
   border-radius: 0 0 10px 10px;
@@ -162,7 +178,7 @@ select {
 .content-area {
   display: grid;
   grid-template-columns: 200px calc(100vw - 255px);
-  background-color: rgba(255, 255, 255, 0.73);
+  background-color: rgba(255, 255, 255, 0.76);
 }
 
 .sidebar-area {
@@ -183,9 +199,9 @@ select {
 }
 
 .profile-pic {
-  background: var(--secondary-color);
+  background: rgba(52, 99, 138, 0.38);
   border-radius: 50%;
-  margin: -40px 0 0 -30px;
+  margin: 20px 0 20px -30px;
   height: 200px;
   width: 200px;
 
@@ -214,7 +230,7 @@ select {
 .menu-item a:hover {
   color: rgb(36, 38, 32);
   background-color: var(--accent-color-2);
-  background: linear-gradient(0.25turn, transparent, var(--accent-color-2));
+  background: linear-gradient(0.25turn, transparent, var(--soft-color),var(--accent-color-2));
   transition-duration: .3s;
 }
 
@@ -233,10 +249,8 @@ select {
 
 .main-body {
   color: var(--main-text);
-  line-height: 1em;
+
   height: calc(100vh - 143px);
-  display: flex;
-  flex-direction: column;
   padding: 20px;
   overflow-x: auto;
 }
@@ -304,3 +318,36 @@ select {
     background-color: red;
     padding-bottom: 40px;
 } */
+
+.edit-page {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-title-row {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.add-button {
+  background-color: var(--main-text);
+  color: var(--soft-color);
+  padding: 8px 15px 8px 20px;
+  border-radius: 20px
+}
+
+.add-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--accent-color-2);
+}
+
+.add-button a {
+  color: var(--soft-color);
+}
+
+.add-button a:hover {
+  text-decoration: none;
+}
