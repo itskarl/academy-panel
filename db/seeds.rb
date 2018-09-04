@@ -8,7 +8,7 @@
 
 education = ['High School', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Master\'s Degree', 'Doctorate or PhD']
 
-200.times do
+150.times do
   firstn = Faker::Name.first_name
   lastn = Faker::Name.last_name
 
@@ -16,14 +16,12 @@ education = ['High School', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelo
     first_name: firstn,
     last_name: lastn,
     age: rand(18..65),
-    email: firstn.chars.first + lastn + '@email.com',
+    email: firstn + "_" + lastn + '@email.com',
     education_level: education.sample,
     password: 'password'
   )
   student.save
 end
-
-
 
 30.times do
   firstn = Faker::Name.first_name
@@ -33,50 +31,70 @@ end
     first_name: firstn,
     last_name: lastn,
     age: rand(24..65),
-    salary: rand(22500..100300),
-    email: firstn.chars.first + lastn + '@email.com',
+    salary: rand(22_500..100_300),
+    email: firstn + "_"  + lastn + '@email.com',
     education_level: education.sample,
     password: 'password'
   )
   instructor.save
 end
 
-
-
-coursehours = [48,80,64,96,112]
+coursehours = [48, 80, 64, 96, 112]
 
 35.times do
   course = Course.new(
     name: Faker::Company.unique.industry,
-    hours: coursehours.sample,
+    hours: coursehours.sample
   )
   course.save
 end
 
-semester = ['Spring 2019','Summer 2019','Fall 2019']
+semester = ['Spring 2019', 'Summer 2019', 'Fall 2019']
 
-  Course.all.each do |x|
-    cohort = Cohort.new(
-      name: x.name + " " + 'Spring 2019',
-      course_id: x.id,
-      start_date: '2019-01-21',
-      end_date: '2019-05-31'
-    )
-    cohort.save
+Course.all.each do |x|
+  cohort = Cohort.new(
+    name: x.name + ' ' + 'Spring 2019',
+    course_id: x.id,
+    start_date: '2019-01-21',
+    end_date: '2019-05-31'
+  )
+  cohort.save
 
-    cohort2 = Cohort.new(
-      name: x.name + " " + 'Summer 2019',
-      course_id: x.id,
-      start_date: '2019-06-15',
-      end_date: '2019-08-26'
-    )
-    cohort2.save
+  cohort2 = Cohort.new(
+    name: x.name + ' ' + 'Summer 2019',
+    course_id: x.id,
+    start_date: '2019-06-15',
+    end_date: '2019-08-26'
+  )
+  cohort2.save
 
-    cohort3 = Cohort.new(
-      name: x.name + " " + 'Fall 2019',
-      course_id: x.id,
-      start_date: '2019-09-02',
-      end_date: '2019-12-17'
-    )
-    cohort3.save
-  end
+  cohort3 = Cohort.new(
+    name: x.name + ' ' + 'Fall 2019',
+    course_id: x.id,
+    start_date: '2019-09-02',
+    end_date: '2019-12-17'
+  )
+  cohort3.save
+end
+
+Instructor.all.each do |q|
+  user = User.new(
+    first_name: q.first_name,
+    last_name: q.last_name,
+    password: 'password',
+    email: q.email,
+    instructor: true
+  )
+  user.save
+end
+
+Student.all.each do |m|
+  user = User.new(
+    first_name: m.first_name,
+    last_name: m.last_name,
+    password: 'password',
+    email: m.email,
+    student: true
+  )
+  user.save
+end

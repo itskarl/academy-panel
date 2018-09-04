@@ -1,5 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div class="edit-page">
+  <p id="notice"><%= notice %></p>
+  <div class="show-page">
 
+    <div class="show-inner">
 <p>
   <strong>First name:</strong>
   <%= @instructor.first_name %>
@@ -30,11 +33,21 @@
   <% end %>
 </p>
 
+</div>
+<div class="show-inner">
 <h1>add cohorts</h1>
 <%= form_tag({controller: :instructors, action: :update}, method: :get)%>
-<%= collection_select(:q, :cohort_ids, Cohort.all, :id, :name) %>
+<div class="form-row">
+  <div class="form-symbol"><i class="fas fa-chalkboard"></i></div>
+ <div><%= collection_select(:q, :cohort_ids, Cohort.all, :id, :name) %></div>
+</div>
 <%= submit_tag('ADD COHORT') %>
+</div>
+</div>
 
-
+<div>
 <%= link_to 'Edit', edit_instructor_path(@instructor) %> |
 <%= link_to 'Back', instructors_path %>
+</div>
+
+</div>

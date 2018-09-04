@@ -29,7 +29,7 @@
               <div class="no-overflow-box">
               <div class="profile-pic">
                 <%= link_to '#' do %>
-                pic
+                <%= current_user.photo.attachment.nil? ? image_tag("/kawaii.png"): image_tag(current_user.photo) if logged_in? %>
               <% end %>
             </div>
             <div class="greeting">

@@ -3,7 +3,6 @@
   <div id="error_explanation">
     <h2><%= pluralize(user.errors.count, "error") %>
       prohibited this user from being saved:</h2>
-
     <ul>
       <% user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -19,15 +18,23 @@
   <%= form.text_field :email, placeholder: "EMAIL" %>
 
   <%= form.password_field :password, placeholder: "PASSWORD" %>
+<div class="form-row">
+  <div><%= form.label :ADMIN? %></div>
+  <div><%= form.label :admin %></div>
+</div>
 
-  <%= form.label :admin %>
-  <%= form.check_box :admin %>
+<div class="form-row">
+  <div><%= form.label :STUDENT? %></div>
+  <div><%= form.check_box :student %></div>
+</div>
 
-  <%= form.label :student %>
-  <%= form.check_box :student %>
+<div class="form-row">
+  <div><%= form.label :INSTRUCTOR? %></div>
+  <div><%= form.check_box :instructor %></div>
+</div>
 
-  <%= form.label :instructor %>
-  <%= form.check_box :instructor %>
+  <%= form.label :photo, "Submit your photo."  %><br>
+  <%= form.file_field :photo %><br>
 
 
     <%= form.submit %>

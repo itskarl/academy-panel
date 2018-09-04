@@ -1,24 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="edit-page">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Course Name:</strong>
-  <%= @course.name %>
-</p>
+    <div class="show-inner">
 
-<p>
-  <strong>Hours:</strong>
-  <%= @course.hours%>
-</p>
+      <h2>
+        <%= @course.name %>
+      </h2>
+      <hr>
 
-<p>
-  <strong>Cohorts:</strong>
-  <% @course.cohorts.each do |k| %>
-  <%= k.name %>
-  <% end %>
-</p>
+      <p>
+        <strong>Hours:</strong>
+        <%= @course.hours%>
+      </p>
+
+      <p>
+        <strong>Cohorts:</strong>
+        <br>
+        <% @course.cohorts.each do |k| %>
+          <%= link_to k.name, cohort_path(k.id) %><br>
+        <% end %><br>
+      </p>
+      <div class="add-button"><%= link_to new_course_cohort_path(@course.id) do %>
+         <i class="fas fa-plus"></i> &nbsp; ADD COHORT TO THIS COURSE
+        <% end%>
+      </div>
+    </div>
 
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<div>
+  <p><%= link_to 'Edit', edit_course_path(@course) %>
+  |
+  <%= link_to 'Back', courses_path %></p>
 
-<p><%= link_to 'New Cohort', new_course_cohort_path(@course.id) %></p>
+
+</div>
+</div>

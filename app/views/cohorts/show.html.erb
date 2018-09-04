@@ -1,55 +1,74 @@
-<p id="notice"><%= notice %></p>
+<div class="edit-page">
+  <p id="notice"><%= notice %></p>
+  <div class="show-page">
 
-<p>
-  <strong>Cohort Name:</strong>
-  <%= @cohort.name %>
-</p>
+    <div class="show-inner">
 
-<p>
-  <strong>COURSE:</strong>
-  <%=  @cohort.course.name %>
-</p>
+      <h2><%= @cohort.name %></h2>
+      <hr>
 
-<p>
-  <strong>INSTRUCTOR:</strong>
-  <%=  @cohort.instructor.full_name if @cohort.instructor %>
-</p>
+      <p>
+        <strong>COURSE:</strong>
+        <%= @cohort.course.name %>
+      </p>
 
+      <p>
+        <strong>INSTRUCTOR:</strong>
+        <%= @cohort.instructor.full_name if @cohort.instructor %>
+      </p>
 
+      <p>
+        <strong>START:</strong>
+        <%= @cohort.start_date %>
+      </p>
 
-<p>
-  <strong>START:</strong>
-  <%= @cohort.start_date %>
-</p>
+      <p>
+        <strong>END:</strong>
+        <%= @cohort.end_date %>
+      </p>
 
+      <p>
+        <strong>STUDENTS</strong>
+        <% @cohort.students.each do |z| %>
+          <%= z.first_name %>
+          <br>
+        <% end %>
+      </p>
+    </div>
+    <div class="show-inner">
+      <h1>ASSIGN INSTRUCTOR</h1>
 
-<p>
-  <strong>END:</strong>
-  <%= @cohort.end_date %>
-</p>
+      <%= form_for @cohort do |form| %>
+      <div class="form-row">
+        <div class="form-symbol">
+          <i class="fas fa-chalkboard-teacher"></i>
+        </div>
+        <div>
+          <%= form.collection_select(:instructor_id, Instructor.all, :id, :full_name) %>
+        </div>
+      </div>
+      <%= form.submit %>
+    <% end %>
 
-<p>
-  <strong>STUDENTS</strong>
-  <% @cohort.students.each do |z| %>
-  <%= z.first_name %>
-  <br>
-  <% end %>
-</p>
+    <h1>ADD STUDENT</h1>
 
-<h1>assign instructor</h1>
+    <%= form_tag({controller: :cohorts, action: :update}, method: :get)%>
+    <div class="form-row">
+      <div class="form-symbol">
+        <i class="fas fa-user-graduate"></i>
 
-<%= form_for @cohort do |form| %>
-<%= form.collection_select(:instructor_id, Instructor.all, :id, :full_name) %>
-<%= form.submit %>
-<% end %>
+      </div>
+      <div>
+        <%= collection_select(:q, :student_ids, Student.all, :id, :full_name) %>
+      </div>
+    </div>
+    <%= submit_tag("ADD COURSE") %>
 
-
-<h1>add student</h1>
-
-<%= form_tag({controller: :cohorts, action: :update}, method: :get)%>
-<%= collection_select(:q, :student_ids, Student.all, :id, :full_name) %>
-<%= submit_tag("ADD COURSE") %>
-
-
-<%= link_to 'Edit', edit_cohort_path(@cohort) %> |
-<%= link_to 'Back', cohorts_path %>
+  </div>
+</div>
+<div>
+  <%= link_to 'Edit', edit_cohort_path(@cohort) %>
+  |
+  <%= link_to 'Back', cohorts_path %>
+</div>
+</div>

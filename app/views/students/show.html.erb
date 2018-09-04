@@ -1,39 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="edit-page">
+  <p id="notice"><%= notice %></p>
+  <div class="show-page">
 
-<p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
+    <div class="show-inner">
+      <h2><%= @student.first_name.upcase %> <%= @student.last_name.upcase %>
+      </h2>
+      <hr>
+      <p>
+        <strong>Age:</strong>
+        <%= @student.age %>
+      </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
+      <p>
+        <strong>Highest Education Level:</strong>
+        <%= @student.education_level %>
+      </p>
 
-<p>
-  <strong>Age:</strong>
-  <%= @student.age %>
-</p>
+      <p>
+        <strong>Current Class List:</strong><br>
+        <% @student.cohorts.uniq.each do |x| %>
+        <%= link_to "#{x.name}", cohort_path(x.id) %><br>
+        <% end %>
 
-<p>
-  <strong>Highest Education Level:</strong>
-  <%= @student.education_level %>
-</p>
+      </div>
+      <div class="show-inner"></p>
 
-<p>
-  <strong>Current Class List:</strong>
-  <% @student.cohorts.uniq.each do |x| %>
-    <%= link_to "#{x.name}", cohort_path(x.id) %><br>
-  <% end %>
+      <h2>ADD TO CLASS:</h2>
+      <%= form_tag({controller: "students", action: "update"}, method: "get") %>
+      <div class="form-row">
+        <div class ="form-symbol"><i class="fas fa-chalkboard"></i></div>
+        <div><%= collection_select(:q, :q, Cohort.all, :id, :name ) %></div>
+      </div>
+      <%= submit_tag("ADD COURSE") %>
 
+    </div>
 
-</p>
-
-<h1>JOIN A class</h1>
-<%= form_tag({controller: "students", action: "update"}, method: "get") %>
-<%= collection_select(:q, :q, Cohort.all, :id, :name ) %>
-<%= submit_tag("ADD COURSE") %>
-
-
-<%= link_to 'Edit', edit_student_path(@student) %>
-<%= link_to 'Back', students_path %>
+  </div>
+  <div>
+    <p><%= link_to 'Edit', edit_student_path(@student) %>
+    |
+    <%= link_to 'Back', students_path %></p>
+  </div>
+</div>
