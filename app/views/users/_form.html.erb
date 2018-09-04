@@ -19,21 +19,22 @@
 
   <%= form.password_field :password, placeholder: "PASSWORD" %>
 <div class="form-row">
-  <div><%= form.label :ADMIN? %></div>
-  <div><%= form.label :admin %></div>
+  <div><h3>ADMIN?</h3></div>
+  <div><%= form.check_box :admin %></div>
 </div>
 
 <div class="form-row">
-  <div><%= form.label :STUDENT? %></div>
+    <div><h3>STUDENT?</h3></div>
   <div><%= form.check_box :student %></div>
 </div>
 
 <div class="form-row">
-  <div><%= form.label :INSTRUCTOR? %></div>
+    <div><h3>ADMIN?</h3></div>
   <div><%= form.check_box :instructor %></div>
 </div>
 
-  <%= form.label :photo, "Submit your photo."  %><br>
+<hr>
+  <%= form.label :photo, "SELECT A PROFILE PHOTO"  %><br>
   <%= form.file_field :photo %><br>
 
 

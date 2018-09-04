@@ -73,7 +73,7 @@ input {
   border-radius: 0px 8px 8px 0px;
   font-size: 16px;
   padding: 0 15px 0 15px;
-  margin: 0 0 12px 0;
+  margin: 6px 0 6px 0;
 }
 
 input[type=submit] {
@@ -83,6 +83,11 @@ input[type=submit] {
   border-radius: 15px;
   color: white;
   font-size: 1em;
+}
+
+
+input[type=checkbox] {
+max-width: 70px;
 }
 
 input[type=submit]:hover {
@@ -98,7 +103,7 @@ select {
   border-radius: 0;
   font-size: 16px;
   padding: 0 15px 0 10px;
-  margin: 5px 0 15px 0;
+  margin: 6px 0 6px 0;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -119,6 +124,7 @@ select {
   align-items: center;
 }
 
+
 .form-symbol {
     background-color: var(--accent-color);
     color: var(--soft-color);
@@ -128,7 +134,7 @@ select {
     align-items: center;
     font-size: 14px;
     padding: 0 8px 0 8px;
-    margin: 0 0 12px 0;
+    margin: 6px 0 6px 0;
 }
 
 ::-webkit-scrollbar {
@@ -278,9 +284,18 @@ color: rgb(255, 225, 225)
 
 .main-body {
   color: var(--main-text);
-
   height: calc(100vh - 143px);
   padding: 20px;
+  overflow-x: auto;
+}
+
+.login-body {
+  color: var(--main-text);
+  height: calc(100vh - 56px);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow-x: auto;
 }
 

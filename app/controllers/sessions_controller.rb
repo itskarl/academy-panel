@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
 
   def new
-    render layout: false
+    render layout: 'login'
   end
 
   def create
