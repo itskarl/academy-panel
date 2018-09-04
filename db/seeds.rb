@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-education = ['High School', 'Bachelor\'s Degree', 'Master\'s Degree', 'Doctorate or PhD']
+education = ['High School', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Master\'s Degree', 'Doctorate or PhD']
 
 200.times do
   firstn = Faker::Name.first_name

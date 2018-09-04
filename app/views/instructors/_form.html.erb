@@ -47,7 +47,11 @@
   <%= form.number_field :salary, min: 1, placeholder: "SALARY"  %>
 </div>
 
+<div> HIGHEST DEGREE </div>
 <div class="form-row">
+  <div class="form-symbol">
+    <i class="fas fa-graduation-cap"></i>
+  </div>
   <%= form.select(:education_level, [['High School'], ['College'], ['Master\'s Degree'], ['Doctorate']]) %>
 </div>
 
