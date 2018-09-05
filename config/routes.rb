@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pages#index'
+  root 'sessions#new'
 
   get 'pages/index'
   get 'pages/help'
@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   end
   resources :instructors
   resources :cohorts
-
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

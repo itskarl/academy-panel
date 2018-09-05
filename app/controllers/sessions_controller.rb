@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
 
-
   def new
     render layout: 'login'
   end
@@ -9,10 +8,11 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in(user)
-      redirect_to root_path
+      render 'pages/index'
     else
-      msg = "invalid credentials"
-      render 'new'
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: '* INVADLID CREDENTIALS. PLEASE TRY AGAIN. *' }
+      end
     end
   end
 

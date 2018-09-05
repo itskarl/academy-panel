@@ -22,13 +22,17 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    if params[:sort]
+      @users = User.all.order("#{params[:sort]} ASC")
+    else
+      @users = User.all
+    end
   end
 
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'He gone now. Look what you\'ve done.' }
+      format.html { redirect_to users_url, notice: 'USER HAS BEEN DELETED SUCESSFULLY' }
     end
   end
 

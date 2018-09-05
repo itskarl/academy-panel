@@ -1,26 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="edit-page">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
+
+
+<div class="show-inner">
+<div class="large-profile-pic">
+<%= current_user.photo.attachment.nil? ? image_tag("/kawaii.png"): image_tag(current_user.photo) if logged_in? %>
+</div>
+<h2>
   <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
   <%= @user.last_name %>
-</p>
+</h2>
 
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
 
-<p>
+<!-- <p>
   <strong>Admin:</strong>
   <%= @user.admin %>
 </p>
@@ -33,7 +31,12 @@
 <p>
   <strong>Instructor:</strong>
   <%= @user.instructor %>
-</p>
+</p> -->
 
+</div>
+<div>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>
+
+</div>

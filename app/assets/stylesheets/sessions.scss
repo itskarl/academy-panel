@@ -1,3 +1,178 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid rgba(59, 54, 91, 0.84);
+    margin: .5em 0;
+    padding: 0;
+}
+
+.canvas {
+  width: 310px;
+  height: 210px;
+  border-style: solid;
+  border-width: 0 0 7px 0;
+  border-color: rgba(59, 54, 91, 0.84);
+}
+
+.inner-canvas {
+  margin: 0;
+  width: 280px;
+  height: 200px;
+  border-style: solid;
+  border-width: 0 0 7px 0;
+  border-color: rgba(59, 54, 91, 0.84);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+
+}
+
+.school-body {
+  width: 250px;
+  height: 80px;
+  border-style: solid;
+  border-width: 2px 2px 0 2px;
+  border-color: rgba(59, 54, 91, 0.84);
+  margin: 0px 0 2px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: rgba(59, 54, 91, 0.84);
+
+}
+
+.school-body-top {
+  height: 80px;
+  width: 180px;
+  border-style: solid;
+  border-width: 2px 2px 0 2px;
+  border-color: rgba(59, 54, 91, 0.84);
+  margin: 0 0 -4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(59, 54, 91, 0.84);
+
+}
+
+.school-body-roof {
+  width: 100px;
+  height: 0;
+  border-style: solid;
+  border-width: 0 45px 7px 45px;
+  border-color: transparent transparent rgba(59, 54, 91, 0.84) transparent;
+  margin-bottom: 2px;
+}
+
+.school-body-middle {
+  width: 190px;
+  height: 0;
+  border-style: solid;
+  border-width: 0 30px 7px 30px;
+  border-color: transparent transparent rgba(59, 54, 91, 0.84) transparent;
+  margin: 6px 0 2px 2px;
+}
+
+.window {
+  position: relative;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #c7d1d3;
+  min-width: 26px;
+  min-height: 30px;
+  margin-top: -10px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.window:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 34px;
+  height: 0;
+  border-style: solid;
+  border-width: 2px;
+  border-top-color: #c7d1d3;
+  border-bottom-color: rgba(59, 54, 91, 0.84);
+  border-left: 0;
+  border-right: 0;
+  margin-left: -4px;
+  margin-bottom: -px;
+}
+
+.door-top {
+  border-style: solid;
+  border-width: 2px 2px 0 2px;
+  border-color: #c7d1d3;
+  width: 50px;
+  margin: -5px -10px -14px -10px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.school-name {
+  font-family: courier;
+  color: #c7d1d3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -3px;
+padding: 0 0 2px 0;
+}
+
+.square {
+  background-color: #c7d1d3;
+  width: 100%;
+  height: 90%;
+  margin: 2px;
+}
+
+.square2 {
+background-color: #c7d1d3;
+  margin: 2px;
+  width: 22px;
+  height: 23px;
+  text-align: center;
+}
+
+.inner-login-body {
+  width:600px;
+  background: linear-gradient(transparent, rgba(255,255,255,0.8), transparent);
+  height: calc(100% + 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+
+.login-body {
+  color: var(--main-text);
+  height: calc(100vh - 56px);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.school-holder {
+  height: 210px;
+
+}

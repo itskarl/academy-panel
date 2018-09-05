@@ -16,11 +16,14 @@
 
       <header class="site-header">
         <div> ADMIN PANEL </div>
-        <div>
+        <div class='close-box'>
+          <div>LOGOUT</div> &nbsp;
+          <%= link_to logout_path, method: :delete do %>
           <div class="x-button">
             <i class="fas fa-times"></i>
           </div>
-        <div>
+          <% end %>
+        </div>
       </header>
       <div class="content-area">
         <aside class="sidebar-area">
@@ -94,7 +97,7 @@
 </div>
 </div>
 <footer class="site-footer">
-FOOT!
+
 </footer>
 </div>
 </body>

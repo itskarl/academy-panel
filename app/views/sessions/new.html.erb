@@ -1,42 +1,57 @@
-<center>
-<h1>LOGIN</h1>
+<center class="login-main">
+  <div>
+    <h1>LOGIN
+      <i class="fas fa-sign-in-alt"></i>
+    </h1>
+    <p id="notice"><%= notice %></p>
+    <%= form_for(:session, url: login_path) do |form| %>
+    <div class="form-row">
+      <div class="form-symbol">
+        <i class="fas fa-at"></i>
+      </div>
+      <div><%= form.email_field :email, placeholder: 'EMAIL', required: true %></div>
 
-<%= form_for(:session, url: login_path) do |form| %>
-<div class="form-row">
-<div class="form-symbol"><i class="fas fa-at"></i></div>
-<div><%= form.email_field :email, placeholder: 'EMAIL', required: true %></div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-symbol">
+        <i class="fas fa-key"></i>
+      </div>
+      <div><%= form.password_field :password, placeholder: 'ENTER PASSWORD', required: true %></div>
+
+    </div>
+
+    <%= form.submit "LOG IN"%>
+
+  <% end %>
 
 </div>
+<div class="school-holder">
 
-<div class="form-row">
-<div class="form-symbol"><i class="fas fa-key"></i></div>
-<div><%= form.password_field :password, placeholder: 'ENTER PASSWORD', required: true %></div>
+  <div class="canvas animated slideInLeft">
+    <div class="inner-canvas no-display" id="inner-canvas">
 
-</div>
+      <div class="school-body-roof no-display" id="school-body-roof"></div>
 
-<%= form.submit %>
-<% end %>
+      <div class="school-body-top no-display" id="school-body-top">
+        <div class="window no-display">
+          <div class="square2"><hr></div>
+        </div>
 
-
-
-  <div class="canvas animated bounceInRight">
-    <div class="inner-canvas">
-
-      <div class="school-body-roof animated bounceIn">
+        <div class="window no-display">
+          <div class="square2"><hr></div>
+        </div>
+        <div class="window no-display">
+          <div class="square2"><hr></div>
+        </div>
+        <div class="window no-display">
+          <div class="square2"><hr></div>
+        </div>
       </div>
 
-      <div class="school-body-top">
-        <div class="window"><div class="square2"><hr></div></div>
+      <div class="school-body-middle no-display" id="school-body-middle"></div>
 
-        <div class="window"><div class="square2"><hr></div></div>
-        <div class="window"><div class="square2"><hr></div></div>
-         <div class="window"><div class="square2"><hr></div></div>
-      </div>
-
-      <div class="school-body-middle">
-      </div>
-
-      <div class="school-body">
+      <div class="school-body no-display" id="school-body">
 
         <div></div>
         <div></div>
@@ -44,9 +59,9 @@
         <div></div>
         <div></div>
         <div></div>
-
-        <div class="school-name"><i class="fas fa-atom"></i></div>
-
+        <div class="school-name no-display" id="school-name">
+          <i class="fas fa-atom"></i>
+        </div>
         <div></div>
         <div></div>
         <div></div>
@@ -54,35 +69,38 @@
         <div></div>
         <div></div>
 
-
         <div></div>
-        <div class="window">
+        <div class="window no-display">
           <div class="square"><hr></div>
         </div>
         <div></div>
-        <div class="window"><div class="square"><hr></div></div>
+        <div class="window no-display">
+          <div class="square"><hr></div>
+        </div>
         <div></div>
         <div></div>
-        <div class="door-top">
+        <div class="door-top no-display" id="door-top">
           <div class="square"></div>
         </div>
         <div></div>
         <div></div>
-        <div class="window"><div class="square"><hr></div></div>
-        <div></div>
-        <div class="window"><div class="square"><hr></div></div>
-        <div></div>
-
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="door-bottom">
-          <div class="square"></div>
+        <div class="window no-display">
+          <div class="square"><hr></div>
         </div>
+        <div></div>
+        <div class="window no-display">
+          <div class="square"><hr></div>
+        </div>
+        <div></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
         <div></div>
         <div></div>
         <div></div>
@@ -93,7 +111,159 @@
       </div>
     </div>
   </div>
-
-
+</div>
 
 </center>
+
+<script type="text/javascript">
+
+setTimeout(function () {
+  document.getElementById("inner-canvas").classList.remove("no-display")
+}, 500);
+setTimeout(function () {
+  document.getElementById("inner-canvas").classList.add("animated")
+}, 500);
+setTimeout(function () {
+  document.getElementById("inner-canvas").classList.add("slideInRight")
+}, 500);
+
+setTimeout(function () {
+  document.getElementById("school-body").classList.remove("no-display")
+}, 1000);
+setTimeout(function () {
+  document.getElementById("school-body").classList.add("animated")
+}, 1000);
+setTimeout(function () {
+  document.getElementById("school-body").classList.add("flipInX")
+}, 1000);
+
+setTimeout(function () {
+  document.getElementById("school-body-middle").classList.remove("no-display")
+}, 1000);
+setTimeout(function () {
+  document.getElementById("school-body-middle").classList.add("animated")
+}, 1000);
+setTimeout(function () {
+  document.getElementById("school-body-middle").classList.add("bounceIn")
+}, 1000);
+
+setTimeout(function () {
+  document.getElementById("school-body-roof").classList.remove("no-display")
+}, 1500);
+setTimeout(function () {
+  document.getElementById("school-body-roof").classList.add("animated")
+}, 1500);
+setTimeout(function () {
+  document.getElementById("school-body-roof").classList.add("bounceInRight")
+}, 1500);
+
+setTimeout(function () {
+  document.getElementById("school-body-top").classList.remove("no-display")
+}, 1500);
+setTimeout(function () {
+  document.getElementById("school-body-top").classList.add("animated")
+}, 1500);
+setTimeout(function () {
+  document.getElementById("school-body-top").classList.add("flipInY")
+}, 1500);
+
+setTimeout(function () {
+  document.getElementsByClassName("window")[0].classList.remove("no-display")
+}, 2500);
+setTimeout(function () {
+  document.getElementsByClassName("window")[0].classList.add("animated")
+}, 2500);
+setTimeout(function () {
+  document.getElementsByClassName("window")[0].classList.add("wobble")
+}, 2500);
+
+setTimeout(function () {
+  document.getElementsByClassName("window")[1].classList.remove("no-display")
+}, 2500);
+setTimeout(function () {
+  document.getElementsByClassName("window")[1].classList.add("animated")
+}, 2500);
+setTimeout(function () {
+  document.getElementsByClassName("window")[1].classList.add("bounceIn")
+}, 2500);
+
+setTimeout(function () {
+  document.getElementsByClassName("window")[2].classList.remove("no-display")
+}, 2500);
+setTimeout(function () {
+  document.getElementsByClassName("window")[2].classList.add("animated")
+}, 2500);
+setTimeout(function () {
+  document.getElementsByClassName("window")[2].classList.add("wobble")
+}, 2500);
+
+setTimeout(function () {
+  document.getElementsByClassName("window")[3].classList.remove("no-display")
+}, 2500);
+setTimeout(function () {
+  document.getElementsByClassName("window")[3].classList.add("animated")
+}, 2500);
+setTimeout(function () {
+  document.getElementsByClassName("window")[3].classList.add("bounceIn")
+}, 2500);
+
+setTimeout(function () {
+  document.getElementsByClassName("window")[4].classList.remove("no-display")
+}, 3000);
+setTimeout(function () {
+  document.getElementsByClassName("window")[4].classList.add("animated")
+}, 3000);
+setTimeout(function () {
+  document.getElementsByClassName("window")[4].classList.add("bounceInRight")
+}, 3000);
+
+setTimeout(function () {
+  document.getElementsByClassName("window")[5].classList.remove("no-display")
+}, 2900);
+setTimeout(function () {
+  document.getElementsByClassName("window")[5].classList.add("animated")
+}, 2900);
+setTimeout(function () {
+  document.getElementsByClassName("window")[5].classList.add("bounceInLeft")
+}, 2900);
+
+setTimeout(function () {
+  document.getElementsByClassName("window")[6].classList.remove("no-display")
+}, 3000);
+setTimeout(function () {
+  document.getElementsByClassName("window")[6].classList.add("animated")
+}, 3000);
+setTimeout(function () {
+  document.getElementsByClassName("window")[6].classList.add("bounceInRight")
+}, 3000);
+
+setTimeout(function () {
+  document.getElementsByClassName("window")[7].classList.remove("no-display")
+}, 2900);
+setTimeout(function () {
+  document.getElementsByClassName("window")[7].classList.add("animated")
+}, 2900);
+setTimeout(function () {
+  document.getElementsByClassName("window")[7].classList.add("bounceInLeft")
+}, 2900);
+
+setTimeout(function () {
+  document.getElementById("door-top").classList.remove("no-display")
+}, 3600);
+setTimeout(function () {
+  document.getElementById("door-top").classList.add("animated")
+}, 3600);
+setTimeout(function () {
+  document.getElementById("door-top").classList.add("zoomIn")
+}, 3600);
+
+setTimeout(function () {
+  document.getElementById("school-name").classList.remove("no-display")
+}, 3000);
+setTimeout(function () {
+  document.getElementById("school-name").classList.add("animated")
+}, 3000);
+setTimeout(function () {
+  document.getElementById("school-name").classList.add("rotateIn")
+}, 3000);
+</script>

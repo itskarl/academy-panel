@@ -13,7 +13,7 @@ class CohortsController < ApplicationController
 
     if @cohort.save
       respond_to do |format|
-        format.html { redirect_to course_cohort_path(@course.id,@cohort.id), notice: 'New COHORT CREATED' }
+        format.html { redirect_to course_cohort_path(@course.id,@cohort.id), notice: 'NEW COHORT CREATED' }
       end
 
     else

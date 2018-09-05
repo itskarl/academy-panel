@@ -3,39 +3,39 @@
   <div class="show-page">
 
     <div class="show-inner">
-<p>
-  <strong>First name:</strong>
+<h2>
   <%= @instructor.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
   <%= @instructor.last_name %>
-</p>
-
+</h2>
+<hr>
 <p>
   <strong>Age:</strong>
   <%= @instructor.age %>
 </p>
 <p>
   <strong>Salary:</strong>
-  <%= @instructor.salary %>
+  <%= number_to_currency(@instructor.salary) %>
 </p>
 <p>
   <strong>Highest Education Level:</strong>
   <%= @instructor.education_level %>
 </p>
+<hr>
 
-<p>
-  <strong>Cohorts</strong>
+  <strong>COHORTS</strong>
   <% @instructor.cohorts.each do |z| %>
-  <%= z.name %>
+  <u><p><%= z.name %></u><br>
+
+  <b>Students:</b> <br>
+  <% z.students.each do |k| %>
+    <i><%= k.full_name %><br></i>
   <% end %>
-</p>
+  <% end %>
+
 
 </div>
 <div class="show-inner">
-<h1>add cohorts</h1>
+<h1>ADD COHORTS</h1>
 <%= form_tag({controller: :instructors, action: :update}, method: :get)%>
 <div class="form-row">
   <div class="form-symbol"><i class="fas fa-chalkboard"></i></div>

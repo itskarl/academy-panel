@@ -1,29 +1,61 @@
 <p id="notice"><%= notice %></p>
 
-<h1>CURRENT LIST OF USERS</h1>
+<div class="page-title-row">
+
+<h1>FULL USERS LIST</h1>
+
+<div class="add-button">
+<%= link_to new_user_path do %> USER &nbsp; <i class="fas fa-chalkboard-teacher"></i>&nbsp;&#43;
+<% end %>
+</div>
+
+</div>
+
+<div class="user-list-grid">
+
+  <div class="title-row">
+    <%= link_to "FIRST NAME", :controller => "users", :sort => "first_name" %>
+  </div>
+  <div class="title-row">
+    <%= link_to "LAST NAME", :controller => "users", :sort => "last_name" %>
+  </div>
+  <div class="title-row">
+    <%= link_to "EMAIL", :controller => "users", :sort => "email" %>
+  </div>
+  <div class="title-row">
+    <%= link_to "ADMIN?", :controller => "users", :sort => "admin" %>
+  </div>
+  <div class="title-row">
+    <%= link_to "STUDENT?", :controller => "users", :sort => "student" %>
+  </div>
+  <div class="title-row">
+    <%= link_to "INSTRUCTOR?", :controller => "users", :sort => "instructor" %>
+  </div>
+  <div class="title-row">
+
+  </div>
+
 
 <% @users.each do |user| %>
-  <tr>
-    <%= user.first_name %><br>
-    <%= user.last_name %><br>
-    <%= user.email %><br>
-    <%= user.password %><br>
-    <%= user.admin %><br>
-    <%= user.student %><br>
-    <%= user.instructor %><br>
 
-    <%= link_to user do %>
-    <i class="fas fa-file"></i>
+    <div><%= user.first_name %></div>
+    <div><%= user.last_name %></div>
+    <div><%= user.email %></div>
+    <div><%= user.admin %></div>
+    <div><%= user.student %></div>
+    <div><%= user.instructor %></div>
+
+  <div>  <%= link_to user do %>
+    SHOW &nbsp;
   <% end %>
 
   <%= link_to edit_user_path(user) do %>
-  <i class="fas fa-edit"></i>
+  EDIT &nbsp;
   <% end %>
 
   <%= link_to user, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
-  <i class="fas fa-trash-alt"></i>
-  <% end %>
+  DELETE &nbsp;
+  <% end %> </div>
 
 <% end %>
-
-<p><%= link_to 'New User', new_user_path %></p>
+</div>

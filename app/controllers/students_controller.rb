@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     respond_to do |format|
-      format.html { redirect_to students_url, notice: 'He gone now. Look what you\'ve done.' }
+      format.html { redirect_to students_url, notice: 'STUDENT SUCCESSFULLY DELETED' }
     end
   end
 

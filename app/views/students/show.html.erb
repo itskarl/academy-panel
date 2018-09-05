@@ -21,9 +21,9 @@
         <% @student.cohorts.uniq.each do |x| %>
         <%= link_to "#{x.name}", cohort_path(x.id) %><br>
         <% end %>
-
+      </p>
       </div>
-      <div class="show-inner"></p>
+      <div class="show-inner">
 
       <h2>ADD TO CLASS:</h2>
       <%= form_tag({controller: "students", action: "update"}, method: "get") %>

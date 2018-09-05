@@ -26,14 +26,15 @@
         <strong>END:</strong>
         <%= @cohort.end_date %>
       </p>
+<hr>
 
-      <p>
-        <strong>STUDENTS</strong>
-        <% @cohort.students.each do |z| %>
-          <%= z.first_name %>
-          <br>
+
+        <strong>STUDENTS:</strong><br>
+        <% @cohort.students.uniq.each do |z| %>
+          <%= z.full_name %><br>
+
         <% end %>
-      </p>
+
     </div>
     <div class="show-inner">
       <h1>ASSIGN INSTRUCTOR</h1>
