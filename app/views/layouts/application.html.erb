@@ -42,12 +42,12 @@
             <li class="menu-item">
               <%= link_to user_path(current_user.id) do %>
               <i class="fas fa-user"></i>
-              &nbsp;&nbsp;&nbsp;&nbsp;<%= current_user.first_name.upcase %>
+              &nbsp;&nbsp;&nbsp;&nbsp;<%= current_user.first_name.upcase %> <%= current_user.last_name.chars.first.upcase %>.
               <% end %>
             </li>
+<%end %>
+            <div class="bar"></div>
 
-            <hr>
-            <%end %>
 
             <li class="menu-item"><%= link_to students_path do %>
               <i class="fas fa-user-graduate"></i>
