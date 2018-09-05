@@ -16,7 +16,7 @@ education = ['High School', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelo
     first_name: firstn,
     last_name: lastn,
     age: rand(18..65),
-    email: firstn + "_" + lastn + '@email.com',
+    email: firstn + '_' + lastn + '@email.com',
     education_level: education.sample,
     password: 'password'
   )
@@ -32,7 +32,7 @@ end
     last_name: lastn,
     age: rand(24..65),
     salary: rand(22_500..100_300),
-    email: firstn + "_"  + lastn + '@email.com',
+    email: firstn + '_' + lastn + '@email.com',
     education_level: education.sample,
     password: 'password'
   )

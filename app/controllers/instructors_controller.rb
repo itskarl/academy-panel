@@ -1,6 +1,7 @@
 class InstructorsController < ApplicationController
-
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
+  after_action :add_email, only: [:create]
+
 
   def new
     @instructor = Instructor.new
@@ -49,6 +50,20 @@ class InstructorsController < ApplicationController
 
   def set_instructor
     @instructor = Instructor.find(params[:id])
+  end
+
+  def add_email
+    @instructor.update(email: "#{@instructor.first_name}_#{@instructor.last_name}@academyAF.com")
+
+    user = User.new(
+      first_name: @instructor.first_name,
+      last_name: @instructor.last_name,
+      password: 'password',
+      email: @instructor.email,
+      instructor: true
+    )
+    user.save
+
   end
 
   def instructor_params

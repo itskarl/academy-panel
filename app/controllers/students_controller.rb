@@ -51,7 +51,15 @@ class StudentsController < ApplicationController
   end
 
   def add_email
-    @student.update(email: "#{@student.first_name}.#{@student.last_name}@digi-academy.com")
+    @student.update(email: "#{@student.first_name}_#{@student.last_name}@academyaf.com")
+    user = User.new(
+      first_name: @student.first_name,
+      last_name: @student.last_name,
+      password: 'password',
+      email: @student.email,
+      student: true
+    )
+    user.save
   end
 
   def addmore; end
