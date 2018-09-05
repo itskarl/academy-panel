@@ -22,14 +22,14 @@
 </p>
 <hr>
 
-  <strong>COHORTS</strong>
+  <strong>COHORTS</strong><br>
   <% @instructor.cohorts.each do |z| %>
-  <u><p><%= z.name %></u><br>
-
-  <b>Students:</b> <br>
+    <%=link_to cohort_path(z) do %><%= z.name %> <% end %>
+<ul>
   <% z.students.each do |k| %>
-    <i><%= k.full_name %><br></i>
+<li><%=link_to student_path(k) do %><%= k.full_name %><% end %></li>
   <% end %>
+</ul>
   <% end %>
 
 

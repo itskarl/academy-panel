@@ -34,8 +34,8 @@
 
   <% @instructors.each do |instructor| %>
 
-    <div><%= instructor.first_name %></div>
-    <div><%= instructor.last_name %></div>
+    <div><%= link_to instructor_path(instructor.id) do %><%= instructor.first_name %><% end %></div>
+    <div><%= link_to instructor_path(instructor.id) do %><%= instructor.last_name %><% end %></div>
     <div><%= instructor.age %></div>
     <div><%= instructor.education_level%></div>
 

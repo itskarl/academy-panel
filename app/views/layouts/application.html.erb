@@ -35,14 +35,7 @@
                 <%= current_user.photo.attachment.nil? ? image_tag("/kawaii.png"): image_tag(current_user.photo) if logged_in? %>
               <% end %>
             </div>
-            <div class="greeting">
-              <% if logged_in? %>
-              <p>Welcome,
-                <%= current_user.first_name.capitalize %>
 
-              </p>
-              <% end %>
-            </div>
             </div>
             </li>
             <% if logged_in? %>
@@ -52,6 +45,8 @@
               &nbsp;&nbsp;&nbsp;&nbsp;<%= current_user.first_name.upcase %>
               <% end %>
             </li>
+
+            <hr>
             <%end %>
 
             <li class="menu-item"><%= link_to students_path do %>
@@ -74,6 +69,11 @@
       <li class="menu-item"><%= link_to instructors_path do%>
         <i class="fas fa-chalkboard-teacher"></i>
         &nbsp; &nbsp;INSTRUCTORS
+      <% end %>
+
+      <li class="menu-item"><%= link_to users_path do%>
+        <i class="fas fa-clipboard-list"></i>
+        &nbsp; &nbsp;&nbsp;&nbsp;ALL USERS
       <% end %>
     </li>
 

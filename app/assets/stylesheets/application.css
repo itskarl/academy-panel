@@ -68,6 +68,16 @@ form {
 .show-inner form {
   box-shadow: 0 0 0 transparent;
 }
+.show-inner ul {
+  margin: 3px 0;
+    list-style-type: square;
+
+}
+.show-inner li {
+  line-height: 19px;
+  align-items: center;
+
+}
 
 input {
   font-family: 'Open Sans Condensed', sans-serif;
@@ -235,14 +245,11 @@ text-decoration: none;
   padding: 0;
 }
 
-.menu {
-  padding-top: 0px;
-  list-style-type: none;
-  margin: 0;
-}
+
 
 .menu {
-  padding: 0;
+  padding: 0 5px 0px 5px;
+  margin: 0;
   list-style-type: none;
 }
 

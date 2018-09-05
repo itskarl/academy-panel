@@ -9,12 +9,14 @@
 
       <p>
         <strong>COURSE:</strong>
-        <%= @cohort.course.name %>
+          <%=link_to course_path(@cohort.course) do%><%= @cohort.course.name %><% end %>
       </p>
 
       <p>
         <strong>INSTRUCTOR:</strong>
-        <%= @cohort.instructor.full_name if @cohort.instructor %>
+        <% if @cohort.instructor %>
+        <%=link_to instructor_path(@cohort.instructor) do %><%= @cohort.instructor.full_name  %> <% end%>
+        <% end %>
       </p>
 
       <p>
@@ -30,8 +32,9 @@
 
 
         <strong>STUDENTS:</strong><br>
+
         <% @cohort.students.uniq.each do |z| %>
-          <%= z.full_name %><br>
+          <%= link_to student_path(z.id) do%><%= z.full_name %><% end %><br>
 
         <% end %>
 

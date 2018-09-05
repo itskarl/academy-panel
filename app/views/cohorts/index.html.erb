@@ -32,10 +32,11 @@
   <% @cohorts.each do |cohort| %>
 
     <div>
-      <%= cohort.course.name %>
+      <%= link_to cohort.course.name, course_path(cohort.course.id) %>
     </div>
+
     <div>
-      <%= cohort.name %>
+      <%= link_to cohort_path(cohort.id) do%><%= cohort.name %><% end %>
     </div>
 
     <div>

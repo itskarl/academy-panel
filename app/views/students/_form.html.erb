@@ -1,4 +1,5 @@
 <%= form_for @student do |form| %>
+
 <% if student.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(student.errors.count, "error") %>
@@ -11,6 +12,7 @@
     </ul>
   </div>
 <% end %>
+
 <div class="form-row">
   <div class='form-symbol'>
     <i class="fas fa-signature"></i>
