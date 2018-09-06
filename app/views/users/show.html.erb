@@ -34,9 +34,13 @@
 </p> -->
 
 </div>
-<div>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+
+<div style="display: flex;">
+    <div class="add-button"><%= link_to 'EDIT', edit_user_path(@user) %>&nbsp;<i class="fas fa-user-edit"></i> </div> &nbsp; &nbsp; 
+    <div class="add-button"><%= link_to 'LIST', users_path %>&nbsp;<i class="fas fa-list-alt"></i></div>
 </div>
+
+
 
 </div>

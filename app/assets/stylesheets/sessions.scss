@@ -5,20 +5,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 2px solid rgba(59, 54, 91, 0.84);
-    margin: .5em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid rgba(59, 54, 91, 0.84);
+  margin: 0.5em 0;
+  padding: 0;
 }
 
 .canvas {
   width: 310px;
-  height: 210px;
+  height: 270px;
   border-style: solid;
   border-width: 0 0 7px 0;
   border-color: rgba(59, 54, 91, 0.84);
@@ -27,7 +25,7 @@ hr {
 .inner-canvas {
   margin: 0;
   width: 280px;
-  height: 200px;
+  height: 260px;
   border-style: solid;
   border-width: 0 0 7px 0;
   border-color: rgba(59, 54, 91, 0.84);
@@ -35,7 +33,6 @@ hr {
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
-
 }
 
 .school-body {
@@ -44,11 +41,27 @@ hr {
   border-style: solid;
   border-width: 2px 2px 0 2px;
   border-color: rgba(59, 54, 91, 0.84);
-  margin: 0px 0 2px 0;
+  margin: 0 0 2px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   background-color: rgba(59, 54, 91, 0.84);
+}
 
+.flag {
+  border-style: solid;
+  border-width: 30px 0 0 3px;
+  border-color: rgba(59, 54, 91, 0.84);
+  width: 50px;
+  height: 30px;
+  margin-right: -25px;
+}
+
+.rotate {
+  transform: rotate(-9deg);
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in;
+  margin-right: -13px;
+  margin-top: -10px;
 }
 
 .school-body-top {
@@ -57,16 +70,15 @@ hr {
   border-style: solid;
   border-width: 2px 2px 0 2px;
   border-color: rgba(59, 54, 91, 0.84);
-  margin: 0 0 -4px 0;
+  margin: 0 0 -4px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background-color: rgba(59, 54, 91, 0.84);
-
 }
 
 .school-body-roof {
-  width: 100px;
+  width: 90px;
   height: 0;
   border-style: solid;
   border-width: 0 45px 7px 45px;
@@ -91,11 +103,11 @@ hr {
   min-width: 26px;
   min-height: 30px;
   margin-top: -10px;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-
 }
+
 .window:after {
   content: "";
   position: absolute;
@@ -118,12 +130,11 @@ hr {
   border-width: 2px 2px 0 2px;
   border-color: #c7d1d3;
   width: 50px;
-  margin: -5px -10px -14px -10px;
-  display:flex;
+  margin: -5px -10px -14px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .school-name {
   font-family: courier;
@@ -132,7 +143,7 @@ hr {
   align-items: center;
   justify-content: center;
   margin-top: -3px;
-padding: 0 0 2px 0;
+  padding: 0 0 2px;
 }
 
 .square {
@@ -143,7 +154,7 @@ padding: 0 0 2px 0;
 }
 
 .square2 {
-background-color: #c7d1d3;
+  background-color: #c7d1d3;
   margin: 2px;
   width: 22px;
   height: 23px;
@@ -151,7 +162,7 @@ background-color: #c7d1d3;
 }
 
 .inner-login-body {
-  width:600px;
+  width: 600px;
   background: linear-gradient(transparent, rgba(255,255,255,0.8), transparent);
   height: calc(100% + 40px);
   display: flex;
@@ -160,7 +171,6 @@ background-color: #c7d1d3;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
-
 
 .login-body {
   color: var(--main-text);
@@ -173,6 +183,5 @@ background-color: #c7d1d3;
 }
 
 .school-holder {
-  height: 210px;
-
+  height: 300px;
 }

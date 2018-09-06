@@ -41,6 +41,9 @@
     <div><%= student.education_level%></div>
 
     <div>
+      <%= link_to student_path(student) do %>
+      SHOW
+      <% end %>
 &nbsp;
     <%= link_to edit_student_path(student) do %>
     EDIT

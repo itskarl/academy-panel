@@ -30,7 +30,8 @@
 
   <div class="canvas animated slideInLeft">
     <div class="inner-canvas no-display" id="inner-canvas">
-
+      <div class="flag no-display" id="flag">
+     </div>
       <div class="school-body-roof no-display" id="school-body-roof"></div>
 
       <div class="school-body-top no-display" id="school-body-top">
@@ -266,4 +267,21 @@ setTimeout(function () {
 setTimeout(function () {
   document.getElementById("school-name").classList.add("rotateIn")
 }, 3000);
+
+setTimeout(function () {
+  document.getElementById("flag").classList.remove("no-display")
+}, 3600);
+setTimeout(function () {
+  document.getElementById("flag").classList.add("animated")
+}, 3600);
+setTimeout(function () {
+  document.getElementById("flag").classList.add("flipInX")
+}, 3600);
+setTimeout(function () {
+  document.getElementById("flag").classList.remove("flipInX")
+}, 4000);
+setTimeout(function () {
+  document.getElementById("flag").classList.add("rotate")
+}, 4110);
+
 </script>

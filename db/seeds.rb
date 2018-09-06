@@ -8,7 +8,7 @@
 
 education = ['High School', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Master\'s Degree', 'Doctorate or PhD']
 
-150.times do
+100.times do
   firstn = Faker::Name.first_name
   lastn = Faker::Name.last_name
 
@@ -23,7 +23,7 @@ education = ['High School', 'Bachelor\'s Degree', 'Bachelor\'s Degree', 'Bachelo
   student.save
 end
 
-30.times do
+25.times do
   firstn = Faker::Name.first_name
   lastn = Faker::Name.last_name
 
@@ -83,7 +83,9 @@ Instructor.all.each do |q|
     last_name: q.last_name,
     password: 'password',
     email: q.email,
-    instructor: true
+    instructor: true,
+    admin: false,
+    student: false
   )
   user.save
 end
@@ -94,6 +96,8 @@ Student.all.each do |m|
     last_name: m.last_name,
     password: 'password',
     email: m.email,
+    instructor: false,
+    admin: false,
     student: true
   )
   user.save

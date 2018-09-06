@@ -1,3 +1,9 @@
+<div class="page-title-row">
+    <div class="add-button"><%= link_to 'EDIT', edit_student_path(@student) %>&nbsp;<i class="fas fa-user-edit"></i> </div>
+    <div><h2>STUDENT PROFILE</h2></div>
+    <div class="add-button"><%= link_to 'LIST', students_path %>&nbsp;<i class="fas fa-list-alt"></i></div>
+</div>
+
 <div class="edit-page">
   <p id="notice"><%= notice %></p>
   <div class="show-page">
@@ -5,17 +11,17 @@
     <div class="show-inner">
       <h2><%= @student.first_name.upcase %> <%= @student.last_name.upcase %>
       </h2>
-      <hr>
+      <div class="bar"></div>
       <p>
         <strong>Age:</strong>
         <%= @student.age %>
       </p>
 
       <p>
-        <strong>Highest Education Level:</strong>
+        <strong>Degree:</strong>
         <%= @student.education_level %>
       </p>
-      <hr>
+      <div class="bar"></div>
       <p>
         <strong>Current Class List:</strong><br>
         <% @student.cohorts.uniq.each do |x| %>
@@ -36,9 +42,5 @@
     </div>
 
   </div>
-  <div>
-    <p><%= link_to 'Edit', edit_student_path(@student) %>
-    |
-    <%= link_to 'Back', students_path %></p>
-  </div>
+
 </div>

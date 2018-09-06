@@ -1,3 +1,11 @@
+<div class="page-title-row">
+    <div class="add-button"><%= link_to 'EDIT', edit_course_path(@course) %>&nbsp;<i class="fas fa-edit"></i> </div>
+    <div><h2>COURSE INFO</h2></div>
+    <div class="add-button"><%= link_to 'LIST', courses_path %>&nbsp;<i class="fas fa-list-alt"></i></div>
+</div>
+
+
+
 <div class="edit-page">
   <p id="notice"><%= notice %></p>
 
@@ -6,15 +14,15 @@
       <h2>
         <%= @course.name %>
       </h2>
-      <hr>
+      <div class="bar"></div>
 
       <p>
-        <strong>Hours:</strong>
+        <strong>HOURS:</strong>
         <%= @course.hours%>
       </p>
 
       <p>
-        <strong>Cohorts:</strong>
+        <strong>COHORTS:</strong>
         <br>
         <% @course.cohorts.each do |k| %>
           <%= link_to k.name, cohort_path(k.id) %><br>
@@ -28,9 +36,6 @@
 
 
 <div>
-  <p><%= link_to 'Edit', edit_course_path(@course) %>
-  |
-  <%= link_to 'Back', courses_path %></p>
 
 
 </div>

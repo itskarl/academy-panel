@@ -43,6 +43,11 @@ a:hover {
   text-decoration: overline;
 }
 
+.show-inner a:hover {
+  text-decoration: none;
+  color: rgb(171, 67, 0)
+}
+
 h1, h2, h3, p {
   margin: 5px;
 }
@@ -67,6 +72,9 @@ form {
 
 .show-inner form {
   box-shadow: 0 0 0 transparent;
+  border-width: 2px 0 0 0px;
+  border-style: dotted;
+  border-color:rgba(91, 130, 162, 0.62)
 }
 .show-inner ul {
   margin: 3px 0;
@@ -391,7 +399,7 @@ text-decoration: none;
 
 .title-row  {
   margin: 5px 0 10px 0;
-  padding: 5px;
+  padding: 5px ;
   border-width: 0 0 1px 0 !important;
   border-style: solid  !important;
   border-color: var(--secondary-color) !important;
@@ -419,7 +427,7 @@ text-decoration: none;
   padding: 20px;
   margin: 10px;
   background-color: rgba(145, 153, 186, 0.3);
-  box-shadow: 2px 0px 5px rgba(0,0,0,.4);
+  box-shadow: 0px 0px 5px rgba(0,0,0,.4);
   border-style: solid;
   border-color: var(--secondary-color);
   border-width: 8px 0 0 0;
@@ -430,13 +438,15 @@ text-decoration: none;
   display: flex;
   justify-content:space-between;
   align-items: center;
+border-width: 0 0 2px 0;
+border-style: dotted;
 }
 
 .add-button {
   background-color: var(--main-text);
   color: var(--soft-color);
   padding: 8px 15px 8px 20px;
-  border-radius: 20px
+  border-radius: 2px;
 }
 
 .add-button:hover {
