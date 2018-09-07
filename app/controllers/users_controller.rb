@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  after_action :create_person, only: [:create]
 
   def new
     @user = User.new
@@ -44,6 +45,28 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def create_person
+
+    if @user.student === true
+      student = Student.new(
+        first_name: @user.first_name,
+        last_name: @user.last_name,
+        password: "password",
+      )
+      student.save
+    end
+
+    if @user.instructor === true
+      instructor = Instructor.new(
+        first_name: @user.first_name,
+        last_name: @user.last_name,
+        password: "password",
+      )
+      instructor.save
+    end
+
+  end
 
   def set_user
     @user = User.find(params[:id])

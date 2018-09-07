@@ -22,11 +22,10 @@
       </p>
 
       <p>
-        <strong>COHORTS:</strong>
-        <br>
+        <p><strong>COHORTS:</strong><br>
         <% @course.cohorts.each do |k| %>
           <%= link_to k.name, cohort_path(k.id) %><br>
-        <% end %><br>
+        <% end %><br></p>
       </p>
       <div class="add-button"><%= link_to new_course_cohort_path(@course.id) do %>
          <i class="fas fa-plus"></i> &nbsp; ADD COHORT TO THIS COURSE

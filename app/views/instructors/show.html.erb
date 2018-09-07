@@ -26,10 +26,11 @@
     <%= @instructor.education_level %>
   </p>
   <div class="bar"></div>
-
-  <strong>COHORTS</strong><br>
+  <br>
+  <p><strong>COHORTS</strong></p>
   <% @instructor.cohorts.each do |z| %>
-    <%=link_to cohort_path(z) do %><%= z.name %>
+    <%=link_to cohort_path(z) do %>
+    <p><%= z.name %></p>
   <% end %>
   <ul>
     <% z.students.each do |k| %>

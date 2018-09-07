@@ -38,12 +38,12 @@
 <div class="bar"></div>
 
 
-        <strong>STUDENTS:</strong><br>
+        <p><strong>STUDENTS:</strong><br>
 
         <% @cohort.students.uniq.each do |z| %>
           <%= link_to student_path(z.id) do%><%= z.full_name %><% end %><br>
 
-        <% end %>
+        <% end %></p>
 
     </div>
     <div class="show-inner">

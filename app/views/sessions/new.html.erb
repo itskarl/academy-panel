@@ -1,10 +1,16 @@
-<center class="login-main">
-  <div>
-    <h1>LOGIN
-      <i class="fas fa-sign-in-alt"></i>
-    </h1>
+
+  <div class="main-login">
+
+
+
+
     <p id="notice"><%= notice %></p>
     <%= form_for(:session, url: login_path) do |form| %>
+        <h1>ANIMAL FARM ACADEMY</h1>
+        <div class="bar" style="width: 100%"></div>
+    <h3>LOGIN
+      <i class="fas fa-sign-in-alt"></i>
+    </h3>
     <div class="form-row">
       <div class="form-symbol">
         <i class="fas fa-at"></i>
@@ -23,12 +29,20 @@
 
     <%= form.submit "LOG IN"%>
 
+
+  <% end %>
+  <div class="demo-form">
+    <%= form_for(:session, url: login_path) do |form| %>
+    <%= form.hidden_field :email, :value => 'karlrodulfo@email.com' %>
+    <%= form.hidden_field :password, :value => 'password'%>
+    <%= form.submit "CLICK HERE FOR A DEMO!"%>
+  </div>
   <% end %>
 
 </div>
 <div class="school-holder">
 
-  <div class="canvas animated slideInLeft">
+  <div class="canvas animated flipInX">
     <div class="inner-canvas no-display" id="inner-canvas">
       <div class="flag no-display" id="flag">
      </div>
@@ -81,7 +95,6 @@
         <div></div>
         <div></div>
         <div class="door-top no-display" id="door-top">
-          <div class="square"></div>
         </div>
         <div></div>
         <div></div>
@@ -114,7 +127,7 @@
   </div>
 </div>
 
-</center>
+
 
 <script type="text/javascript">
 
@@ -255,7 +268,7 @@ setTimeout(function () {
   document.getElementById("door-top").classList.add("animated")
 }, 3600);
 setTimeout(function () {
-  document.getElementById("door-top").classList.add("zoomIn")
+  document.getElementById("door-top").classList.add("wobble")
 }, 3600);
 
 setTimeout(function () {
@@ -275,10 +288,10 @@ setTimeout(function () {
   document.getElementById("flag").classList.add("animated")
 }, 3600);
 setTimeout(function () {
-  document.getElementById("flag").classList.add("flipInX")
+  document.getElementById("flag").classList.add("flipInY")
 }, 3600);
 setTimeout(function () {
-  document.getElementById("flag").classList.remove("flipInX")
+  document.getElementById("flag").classList.remove("flipInY")
 }, 4000);
 setTimeout(function () {
   document.getElementById("flag").classList.add("rotate")

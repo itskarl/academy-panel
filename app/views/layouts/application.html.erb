@@ -12,14 +12,15 @@
 
   </head>
   <body>
-    <div class="dashboard">
+    <div class="dashboard-container">
+    <div class="dashboard" id="dashboard">
 
       <header class="site-header">
-        <div> ADMIN PANEL </div>
+        <strong> AF ACADEMY ADMIN PANEL </strong>
         <div class='close-box'>
           <div>LOGOUT</div> &nbsp;
-          <%= link_to logout_path, method: :delete do %>
-          <div class="x-button">
+          <%= link_to "logout_path", method: :delete do %>
+          <div class="x-button" onclick="closeIt()">
             <i class="fas fa-times"></i>
           </div>
           <% end %>
@@ -32,7 +33,11 @@
               <div class="no-overflow-box">
               <div class="profile-pic">
                 <%= link_to '#' do %>
-                <%= current_user.photo.attachment.nil? ? image_tag("/kawaii.png"): image_tag(current_user.photo) if logged_in? %>
+                <% if logged_in? %>
+                <%= current_user.photo.attachment.nil? ? image_tag("/kawaii.png"): image_tag(current_user.photo)%>
+                <% else %>
+                <%= image_tag("/kawaii.png") %>
+                <% end %>
               <% end %>
             </div>
 
@@ -100,5 +105,15 @@
 
 </footer>
 </div>
+</div>
+<script type="text/javascript">
+  function closeIt() {
+    document.getElementById('dashboard').classList.add("close-dash");
+    setTimeout(function(){ window.location = '/logout' ;}, 300);
+  }
+
+</script>
+
+
 </body>
 </html>

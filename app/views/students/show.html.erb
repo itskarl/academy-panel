@@ -23,11 +23,11 @@
       </p>
       <div class="bar"></div>
       <p>
-        <strong>Current Class List:</strong><br>
+        <strong>CURRENT CLASS LIST:<br></strong>
         <% @student.cohorts.uniq.each do |x| %>
         <%= link_to "#{x.name}", cohort_path(x.id) %><br>
-        <% end %>
-      </p>
+        <% end %></p>
+
       </div>
       <div class="show-inner">
 

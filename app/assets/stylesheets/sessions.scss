@@ -20,6 +20,9 @@ hr {
   border-style: solid;
   border-width: 0 0 7px 0;
   border-color: rgba(59, 54, 91, 0.84);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .inner-canvas {
@@ -127,7 +130,7 @@ hr {
 
 .door-top {
   border-style: solid;
-  border-width: 2px 2px 0 2px;
+  border-width: 2px;
   border-color: #c7d1d3;
   width: 50px;
   margin: -5px -10px -14px;
@@ -162,20 +165,21 @@ hr {
 }
 
 .inner-login-body {
-  width: 600px;
-  background: linear-gradient(transparent, rgba(255,255,255,0.8), transparent);
-  height: calc(100% + 40px);
-  display: flex;
+  width: auto;
+  height: calc(100vh - 56px);
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.8), transparent);
+  overflow: hidden;
+  display: grid;
+  grid-column-gap: 20px;
+  padding: 20px;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
 }
 
 .login-body {
   color: var(--main-text);
-  height: calc(100vh - 56px);
-  padding: 20px;
+  height: calc(100vh - 16px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,4 +188,26 @@ hr {
 
 .school-holder {
   height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.demo-form form {
+  border-width: 0;
+  padding: 15px;
+  box-shadow: 0 0 0 transparent;
+}
+
+.demo-form input[type=submit]{
+  background-color: rgb(215, 101, 101);
+  box-shadow: 0 0 5px rgba(20, 20, 20, 0.21);
+  border-radius: 0;
 }
