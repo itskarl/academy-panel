@@ -102,3 +102,14 @@ Student.all.each do |m|
   )
   user.save
 end
+
+karl = User.new(
+  first_name: 'Karl',
+  last_name: 'Rodulfo',
+  password: 'password',
+  email: karlrodulfo@email.com,
+  instructor: true,
+  admin: false,
+  student: false
+)
+karl.save
