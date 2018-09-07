@@ -16,14 +16,26 @@
     <div class="dashboard" id="dashboard">
 
       <header class="site-header">
-        <strong> AF ACADEMY ADMIN PANEL </strong>
+        <div> AF ACADEMY ADMIN PANEL </div>
         <div class='close-box'>
           <div>LOGOUT</div> &nbsp;
+
+          <% if logged_in? %>
           <%= link_to "logout_path", method: :delete do %>
           <div class="x-button" onclick="closeIt()">
             <i class="fas fa-times"></i>
           </div>
           <% end %>
+
+          <% else %>
+
+          <%= link_to "root_path" do %>
+          <div class="x-button" onclick="closeIt()">
+            <i class="fas fa-times"></i>
+          </div>
+          <% end %>
+          <% end %>
+
         </div>
       </header>
       <div class="content-area">
