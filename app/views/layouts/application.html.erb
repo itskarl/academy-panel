@@ -21,7 +21,7 @@
           <div>LOGOUT</div> &nbsp;
 
           <% if logged_in? %>
-          <%= link_to "logout_path", method: :delete do %>
+          <%= link_to logout_path, method: :delete do %>
           <div class="x-button" onclick="closeIt()">
             <i class="fas fa-times"></i>
           </div>
