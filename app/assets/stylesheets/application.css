@@ -512,6 +512,7 @@ border-style: dotted;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding:20px;
 }
 
 .welcome-boxes .show-inner {
@@ -519,4 +520,10 @@ border-style: dotted;
   display:flex;
   align-items: center;
   justify-content: center;
+  column-gap: 10px;
+}
+
+.index-pics img {
+  margin: 5px;
+  width: 130px;
 }

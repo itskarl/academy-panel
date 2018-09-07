@@ -1,43 +1,54 @@
 <div class="welcome-page">
 
-  <h1>
-    ANIMAL FARM ACADEMY</h1>
-  <div class="bar"></div>
-  <p>
-    Four years good, two legs bad
-  </p>
+<div class="page-title-row">
+  <h1>ANIMAL FARM ACADEMY</h1>
+
   <% if logged_in? %>
-    <h2>Welcome,
-      <%= current_user.first_name %></h2>
+      <h2>WELCOME,
+        <%= current_user.first_name.upcase %>
+      </h2>
   <% end %>
+</div>
 
   <div class="welcome-boxes">
     <div class="show-inner">
-      <div class="profile-pic">Pic</div>
+      <div class="index-pics">
+        <%= link_to students_path do %><img src="main-students.png"><% end %>
+      </div>
       <div>
-        <h3>MEET THE STUDENTS</h3>
+        <%= link_to students_path do %><h3>STUDENT DATABASE</h3><% end %>
         <div class="bar"></div>
+        <p>Our sagacious, stunning students simply surpass scholarly standards. </p>
       </div>
     </div>
     <div class="show-inner">
-      <div class="profile-pic">Pic</div>
+      <div class="index-pics">
+        <%= link_to instructors_path do %><img src="main-instructors.png"><% end %>
+      </div>
       <div>
-        <h3>MEET THE FACULTY</h3>
+        <%= link_to instructors_path do %><h3>FACULTY DATABASE</h3><% end %>
         <div class="bar"></div>
+        <p>Our fantabulous far-faceted faculty facilitate fruitful, fun forums.</p>
       </div>
     </div>
     <div class="show-inner">
-      <div class="profile-pic">Pic</div>
+      <div class="index-pics">
+        <%= link_to courses_path do %><img src="main-courses.png"><% end %>
+      </div>
       <div>
-        <h3>SEE THE COURSES</h3>
+        <%= link_to courses_path do %><h3>COURSE LIST</h3><% end %>
         <div class="bar"></div>
+        <p>Our certifiably cerebral course catalogue can cater to countless curious characters.</p>
       </div>
     </div>
     <div class="show-inner">
-      <div class="profile-pic">Pic</div>
+      <div class="index-pics">
+        <%= link_to cohorts_path do %><img src="main-cohorts.png"><% end %>
+      </div>
       <div>
-        <h3>SEE THE COHORTS</h3>
+        <%= link_to cohorts_path do %><h3>COHORT LIST</h3><% end %>
         <div class="bar"></div>
+        <p>Pick a panoply of patently perfect planned programs.</p>
       </div>
     </div>
   </div>
