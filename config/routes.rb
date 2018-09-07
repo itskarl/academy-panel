@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   resources :instructors
   resources :cohorts
+  resources :pages
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

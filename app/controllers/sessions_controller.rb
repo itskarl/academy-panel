@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in(user)
-      render 'pages/index'
+      redirect_to pages_path
     else
       respond_to do |format|
         format.html { redirect_to root_path, notice: '* INVADLID CREDENTIALS. PLEASE TRY AGAIN. *' }

@@ -13,119 +13,122 @@
   </head>
   <body>
     <div class="dashboard-container">
-    <div class="dashboard" id="dashboard">
+      <div class="dashboard" id="dashboard">
 
-      <header class="site-header">
-        <div> AF ACADEMY ADMIN PANEL </div>
-        <div class='close-box'>
-          <div>LOGOUT</div> &nbsp;
-
-          <% if logged_in? %>
-          <%= link_to logout_path, method: :delete do %>
-          <div class="x-button" onclick="closeIt()">
-            <i class="fas fa-times"></i>
+        <header class="site-header">
+          <div>
+            AF ACADEMY ADMIN PANEL
           </div>
-          <% end %>
+          <div class='close-box'>
+            <div>LOGOUT</div>
+            &nbsp;
 
-          <% else %>
 
-          <%= link_to root_path do %>
-          <div class="x-button" onclick="closeIt()">
-            <i class="fas fa-times"></i>
-          </div>
-          <% end %>
-          <% end %>
 
-        </div>
-      </header>
-      <div class="content-area">
-        <aside class="sidebar-area">
-          <nav class="side-navigation">
-            <ul class="menu">
-              <div class="no-overflow-box">
+              <div class="x-button" onclick="closeIt()">
+                <i class="fas fa-times"></i>
+              </div>
+
+
+
+
+      </div>
+    </header>
+    <div class="content-area">
+      <aside class="sidebar-area">
+        <nav class="side-navigation">
+          <ul class="menu">
+            <div class="no-overflow-box">
               <div class="profile-pic">
                 <%= link_to '#' do %>
                 <% if logged_in? %>
-                <%= current_user.photo.attachment.nil? ? image_tag("/kawaii.png"): image_tag(current_user.photo)%>
+                  <%= current_user.photo.attachment.nil? ? image_tag("/kawaii.png"): image_tag(current_user.photo)%>
                 <% else %>
-                <%= image_tag("/kawaii.png") %>
+                  <%= image_tag("/kawaii.png") %>
                 <% end %>
               <% end %>
             </div>
 
-            </div>
-            </li>
-            <% if logged_in? %>
-            <li class="menu-item">
-              <%= link_to user_path(current_user.id) do %>
-              <i class="fas fa-user"></i>
-              &nbsp;&nbsp;&nbsp;&nbsp;<%= current_user.first_name.upcase %> <%= current_user.last_name.chars.first.upcase %>.
-              <% end %>
-            </li>
-<%end %>
-            <div class="bar"></div>
-
-
-            <li class="menu-item"><%= link_to students_path do %>
-              <i class="fas fa-user-graduate"></i>
-              &nbsp;&nbsp;&nbsp;&nbsp;STUDENTS
-            <% end %>
-            </li>
-          <li class="menu-item"><%= link_to courses_path do%>
-            <i class="fas fa-chalkboard"></i>
-            &nbsp; &nbsp;COURSES
+          </div>
+        </li>
+        <% if logged_in? %>
+          <li class="menu-item">
+            <%= link_to user_path(current_user.id) do %>
+            <i class="fas fa-user"></i>
+            &nbsp;&nbsp;&nbsp;&nbsp;<%= current_user.first_name.upcase %>
+            <%= current_user.last_name.chars.first.upcase %>.
           <% end %>
         </li>
+      <%end %>
+      <div class="bar"></div>
 
-        <li class="menu-item"><%= link_to cohorts_path do%>
-          <i class="fas fa-users"></i>
-          &nbsp; &nbsp;COHORTS
-        <% end %>
-      </li>
-
-      <li class="menu-item"><%= link_to instructors_path do%>
-        <i class="fas fa-chalkboard-teacher"></i>
-        &nbsp; &nbsp;INSTRUCTORS
-      <% end %>
-
-      <li class="menu-item"><%= link_to users_path do%>
-        <i class="fas fa-clipboard-list"></i>
-        &nbsp; &nbsp;&nbsp;&nbsp;ALL USERS
+      <li class="menu-item"><%= link_to students_path do %>
+        <i class="fas fa-user-graduate"></i>
+        &nbsp;&nbsp;&nbsp;&nbsp;STUDENTS
       <% end %>
     </li>
-
-    <% if logged_in? %>
-
-      <li class="menu-item"><%= link_to logout_path, method: :delete do %>
-        <i class="fas fa-sign-out-alt"></i>
-          &nbsp;&nbsp;&nbsp;LOG OUT
-        <% end %>
-      </li>
-
-    <% else %>
-      <li class="menu-item"><%= link_to 'REGISTER', new_user_path %></li>
-      <li class="menu-item"><%= link_to 'LOGIN', '/login' %></li>
+    <li class="menu-item"><%= link_to courses_path do%>
+      <i class="fas fa-chalkboard"></i>
+      &nbsp; &nbsp;COURSES
     <% end %>
-  </ul>
+  </li>
+
+  <li class="menu-item"><%= link_to cohorts_path do%>
+    <i class="fas fa-users"></i>
+    &nbsp; &nbsp;COHORTS
+  <% end %>
+</li>
+
+<li class="menu-item"><%= link_to instructors_path do%>
+  <i class="fas fa-chalkboard-teacher"></i>
+  &nbsp; &nbsp;INSTRUCTORS
+<% end %>
+
+<li class="menu-item"><%= link_to users_path do%>
+  <i class="fas fa-clipboard-list"></i>
+  &nbsp; &nbsp;&nbsp;&nbsp;ALL USERS
+<% end %>
+</li>
+
+<% if logged_in? %>
+
+<li class="menu-item"><%= link_to logout_path, method: :delete do %>
+  <i class="fas fa-sign-out-alt"></i>
+  &nbsp;&nbsp;&nbsp;LOG OUT
+<% end %>
+</li>
+
+<% else %>
+<li class="menu-item"><%= link_to 'REGISTER', new_user_path %></li>
+<li class="menu-item"><%= link_to 'LOGIN', '/login' %></li>
+<% end %>
+</ul>
 </nav>
 </aside>
 <div class="main-body">
 <%=yield %>
 </div>
 </div>
-<footer class="site-footer">
-
-</footer>
+<footer class="site-footer"></footer>
 </div>
 </div>
 <script type="text/javascript">
-  function closeIt() {
-    document.getElementById('dashboard').classList.add("close-dash");
-    setTimeout(function(){ window.location = '/logout' ;}, 300);
-  }
+      function closeIt() {
+      document.getElementById('dashboard').classList.add("close-dash");
 
-</script>
+      <% if logged_in? %>
 
+      setTimeout(function () {
+      window.location = '/logout';
+    }, 800);
 
-</body>
-</html>
+      <% else %>
+
+      setTimeout(function () {
+      window.location = '/login';
+    }, 800);
+
+      <% end %>
+
+      }
+</script></body> </html>

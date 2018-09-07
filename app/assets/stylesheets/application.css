@@ -499,8 +499,24 @@ border-style: dotted;
   height: 0px;
   width: 300px;
   transition-duration: .6s;
+  transition-timing-function: ease-in;
   display: flex;
   align-items: center;
   justify-content:center;
   overflow: hidden;
+}
+
+.welcome-boxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-boxes .show-inner {
+  width: 300px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,9 +1,44 @@
+<div class="welcome-page">
 
-<center>
+  <h1>
+    ANIMAL FARM ACADEMY</h1>
+  <div class="bar"></div>
+  <p>
+    Four years good, two legs bad
+  </p>
+  <% if logged_in? %>
+    <h2>Welcome,
+      <%= current_user.first_name %></h2>
+  <% end %>
 
-</center>
-
-<% if logged_in? %>
-you logged in, boi. <br>
-<%= link_to 'LOG OUT', logout_path, method: :delete %>
-<% end %>
+  <div class="welcome-boxes">
+    <div class="show-inner">
+      <div class="profile-pic">Pic</div>
+      <div>
+        <h3>MEET THE STUDENTS</h3>
+        <div class="bar"></div>
+      </div>
+    </div>
+    <div class="show-inner">
+      <div class="profile-pic">Pic</div>
+      <div>
+        <h3>MEET THE FACULTY</h3>
+        <div class="bar"></div>
+      </div>
+    </div>
+    <div class="show-inner">
+      <div class="profile-pic">Pic</div>
+      <div>
+        <h3>SEE THE COURSES</h3>
+        <div class="bar"></div>
+      </div>
+    </div>
+    <div class="show-inner">
+      <div class="profile-pic">Pic</div>
+      <div>
+        <h3>SEE THE COHORTS</h3>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </div>
+</div>
