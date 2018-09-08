@@ -40,17 +40,23 @@
     <div><%= instructor.education_level%></div>
 
     <div><%= number_to_currency(instructor.salary) %></div>
-    <div><%= link_to instructor do %>
-      SHOW
+
+    <div class="actionsdiv">
+
+    <div class="showbtn"><%= link_to instructor_path(instructor) do %>
+      MORE
     <% end %>
-&nbsp;
-    <%= link_to edit_instructor_path(instructor) do %>
+    </div>
+
+    <div class="editbtn"><%= link_to edit_instructor_path(instructor) do %>
     EDIT
     <% end %>
-&nbsp;
-    <%= link_to instructor, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+    </div>
+
+    <div class="delbtn"><%= link_to instructor, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
     DELETE
     <% end %>
+    </div>
     </div>
 
 <% end %>

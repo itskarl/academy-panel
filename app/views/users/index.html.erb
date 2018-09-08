@@ -45,17 +45,24 @@
     <div><%= user.student %></div>
     <div><%= user.instructor %></div>
 
-  <div>  <%= link_to user do %>
-    SHOW &nbsp;
-  <% end %>
 
-  <%= link_to edit_user_path(user) do %>
-  EDIT &nbsp;
-  <% end %>
+    <div class="actionsdiv">
 
-  <%= link_to user, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
-  DELETE &nbsp;
-  <% end %> </div>
+    <div class="showbtn"><%= link_to user_path(user) do %>
+      MORE
+    <% end %>
+    </div>
+
+    <div class="editbtn"><%= link_to edit_user_path(user) do %>
+    EDIT
+    <% end %>
+    </div>
+
+    <div class="delbtn"><%= link_to user, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+    DELETE
+    <% end %>
+    </div>
+    </div>
 
 <% end %>
 </div>

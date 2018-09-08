@@ -46,19 +46,24 @@
       <%= cohort.end_date.strftime('%b %d, %Y') %>
     </div>
 
-    <div>
-      <%= link_to cohort do %>
-      SHOW
+
+    <div class="actionsdiv">
+
+    <div class="showbtn"><%= link_to cohort_path(cohort) do %>
+      MORE
     <% end %>
-    &nbsp;
-    <%= link_to edit_cohort_path(cohort) do %>
+    </div>
+
+    <div class="editbtn"><%= link_to edit_cohort_path(cohort) do %>
     EDIT
-  <% end %>
-  &nbsp;
-  <%= link_to cohort, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
-  DELETE
-<% end %>
-</div>
+    <% end %>
+    </div>
+
+    <div class="delbtn"><%= link_to cohort, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+    DELETE
+    <% end %>
+    </div>
+    </div>
 
 <% end %>
 </div>

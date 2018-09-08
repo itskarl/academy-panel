@@ -30,17 +30,24 @@
     <div><%= course.hours %></div>
 
 
-  <div>  <%= link_to course do %>
-    SHOW
-  <% end %>
-&nbsp;
-  <%= link_to edit_course_path(course) do %>
-  EDIT
-<% end %>
-&nbsp;
-<%= link_to course, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
-DELETE
-<% end %></div>
+
+    <div class="actionsdiv">
+
+    <div class="showbtn"><%= link_to course_path(course) do %>
+      MORE
+    <% end %>
+    </div>
+
+    <div class="editbtn"><%= link_to edit_course_path(course) do %>
+    EDIT
+    <% end %>
+    </div>
+
+    <div class="delbtn"><%= link_to course, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+    DELETE
+    <% end %>
+    </div>
+    </div>
 
 <% end %>
 </div>

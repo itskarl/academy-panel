@@ -2,57 +2,62 @@
 
 <div class="page-title-row">
 
-<h1>STUDENTS LIST</h1>
+  <h1>STUDENTS LIST</h1>
 
-<div class="add-button">
-<%= link_to new_student_path do %> ADD STUDENT &nbsp; <i class="fas fa-user-plus"></i>
-<% end %>
+  <div class="add-button">
+    <%= link_to new_student_path do %>
+    ADD STUDENT &nbsp;
+    <i class="fas fa-user-plus"></i>
+  <% end %>
 </div>
 
 </div>
-
 
 <div class="student-list-grid">
 
+<div class="title-row">
+  <%= link_to "FIRST NAME", :controller => "students", :sort => "first_name" %>
+</div>
+<div class="title-row">
+  <%= link_to "LAST NAME", :controller => "students", :sort => "last_name" %>
+</div>
+<div class="title-row">
+  <%= link_to "AGE", :controller => "students", :sort => "age" %>
+</div>
+<div class="title-row">
+  <%= link_to "EDUCATION", :controller => "students", :sort => "education_level" %>
+</div>
+<div class="title-row"></div>
 
-  <div class="title-row">
-    <%= link_to "FIRST NAME", :controller => "students", :sort => "first_name" %>
-  </div>
-  <div class="title-row">
-    <%= link_to "LAST NAME", :controller => "students", :sort => "last_name" %>
-  </div>
-  <div class="title-row">
-    <%= link_to "AGE", :controller => "students", :sort => "age" %>
-  </div>
-  <div class="title-row">
-    <%= link_to "EDUCATION", :controller => "students", :sort => "education_level" %>
-  </div>
-  <div class="title-row">
+<% @students.each do |student| %>
 
-  </div>
+  <div><%= link_to student_path(student.id) do %><%= student.first_name %>
+  <% end %>
+</div>
+<div><%= link_to student_path(student.id) do %><%= student.last_name %>
+<% end %>
+</div>
 
-  <% @students.each do |student| %>
+<div><%= student.age %></div>
+<div><%= student.education_level%></div>
 
+<div class="actionsdiv">
 
-    <div><%= link_to student_path(student.id) do %><%= student.first_name %><% end %></div>
-    <div><%= link_to student_path(student.id) do %><%= student.last_name %><% end %></div>
+<div class="showbtn"><%= link_to student_path(student) do %>
+  MORE
+<% end %>
+</div>
 
-    <div><%= student.age %></div>
-    <div><%= student.education_level%></div>
+<div class="editbtn"><%= link_to edit_student_path(student) do %>
+EDIT
+<% end %>
+</div>
 
-    <div>
-      <%= link_to student_path(student) do %>
-      SHOW
-      <% end %>
-&nbsp;
-    <%= link_to edit_student_path(student) do %>
-    EDIT
-    <% end %>
-&nbsp;
-    <%= link_to student, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
-    DELETE
-    <% end %>
-    </div>
+<div class="delbtn"><%= link_to student, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+DELETE
+<% end %>
+</div>
+</div>
 
-    <% end %>
-    </div>
+<% end %>
+</div>
