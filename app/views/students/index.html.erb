@@ -15,6 +15,9 @@
 
 <div class="student-list-grid">
 
+  <div class="title-row">
+
+  </div>
 <div class="title-row">
   <%= link_to "FIRST NAME", :controller => "students", :sort => "first_name" %>
 </div>
@@ -30,6 +33,12 @@
 <div class="title-row"></div>
 
 <% @students.each do |student| %>
+
+<div class="tiny-profile-pic">
+  <%= link_to student_path(student.id) do %>
+<%= image_tag("/animals/" + rand(1..50).to_s + ".png") %>
+<% end %>
+</div>
 
   <div><%= link_to student_path(student.id) do %><%= student.first_name %>
   <% end %>

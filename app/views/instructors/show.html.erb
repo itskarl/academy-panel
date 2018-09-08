@@ -12,7 +12,7 @@
   <p id="notice"><%= notice %></p>
 
   <div class="show-inner"><div class="large-profile-pic">
-    <%= @instructor.photo.attachment.nil? ? image_tag("/kawaii.png"): image_tag(@instructor.photo) if logged_in? %> </div> <h2> <%= @instructor.first_name %> <%= @instructor.last_name %> </h2> <div class="bar"></div>
+    <%= @instructor.photo.attachment.nil? ? image_tag("/animals/" + rand(1..50).to_s + ".png") : image_tag(@instructor.photo) if logged_in? %> </div> <h2> <%= @instructor.first_name %> <%= @instructor.last_name %> </h2> <div class="bar"></div>
   <p>
     <strong>Age:</strong>
     <%= @instructor.age %>

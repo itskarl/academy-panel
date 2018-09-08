@@ -44,7 +44,7 @@
               <div class="profile-pic">
                 <%= link_to '#' do %>
                 <% if logged_in? %>
-                  <%= current_user.photo.attachment.nil? ? image_tag("/kawaii.png"): image_tag(current_user.photo)%>
+                  <%= current_user.photo.attachment.nil? ? image_tag("/animals/" + rand(1..50).to_s + ".png") : image_tag(current_user.photo)%>
                 <% else %>
                   <%= image_tag("/kawaii.png") %>
                 <% end %>

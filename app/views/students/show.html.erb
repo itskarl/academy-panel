@@ -1,7 +1,11 @@
 <div class="page-title-row">
-    <div class="add-button"><%= link_to 'EDIT', edit_student_path(@student) %>&nbsp;<i class="fas fa-user-edit"></i> </div>
-    <div><h2>STUDENT PROFILE</h2></div>
-    <div class="add-button"><%= link_to 'LIST', students_path %>&nbsp;<i class="fas fa-list-alt"></i></div>
+  <div class="add-button"><%= link_to 'EDIT', edit_student_path(@student) %>&nbsp;<i class="fas fa-user-edit"></i>
+  </div>
+  <div>
+    <h2>STUDENT PROFILE</h2>
+  </div>
+  <div class="add-button"><%= link_to 'LIST', students_path %>&nbsp;<i class="fas fa-list-alt"></i>
+  </div>
 </div>
 
 <div class="edit-page">
@@ -9,7 +13,13 @@
   <div class="show-page">
 
     <div class="show-inner">
-      <h2><%= @student.first_name.upcase %> <%= @student.last_name.upcase %>
+      <center>
+        <div class="large-profile-pic">
+          <%= image_tag("/animals/" + rand(1..50).to_s + ".png") %>
+        </div>
+      </center>
+      <h2><%= @student.first_name.upcase %>
+        <%= @student.last_name.upcase %>
       </h2>
       <div class="bar"></div>
       <p>
@@ -21,20 +31,24 @@
         <strong>Degree:</strong>
         <%= @student.education_level %>
       </p>
+
+    </div>
+    <div class="show-inner">
+
+      <h2>CURRENT CLASS LIST:<br></h2>
       <div class="bar"></div>
       <p>
-        <strong>CURRENT CLASS LIST:<br></strong>
         <% @student.cohorts.uniq.each do |x| %>
-        <%= link_to "#{x.name}", cohort_path(x.id) %><br>
-        <% end %></p>
-
-      </div>
-      <div class="show-inner">
-
+          <%= link_to "#{x.name}", cohort_path(x.id) %><br>
+        <% end %>
+      </p>
+      <br>
       <h2>ADD TO CLASS:</h2>
       <%= form_tag({controller: "students", action: "update"}, method: "get") %>
       <div class="form-row">
-        <div class ="form-symbol"><i class="fas fa-chalkboard"></i></div>
+        <div class="form-symbol">
+          <i class="fas fa-chalkboard"></i>
+        </div>
         <div><%= collection_select(:q, :q, Cohort.all, :id, :name ) %></div>
       </div>
       <%= submit_tag("ADD COURSE") %>
