@@ -34,8 +34,10 @@ class UsersController < ApplicationController
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'USER HAS BEEN DELETED SUCESSFULLY' }
+      format.js   { render :layout => false }
     end
   end
+
 
   def update
     @user.update(user_params)

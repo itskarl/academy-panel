@@ -40,8 +40,8 @@
 <% end %>
 </div>
 
-  <div><%= link_to student_path(student.id) do %><%= student.first_name %>
-  <% end %>
+<div><%= link_to student_path(student.id) do %><%= student.first_name %>
+<% end %>
 </div>
 <div><%= link_to student_path(student.id) do %><%= student.last_name %>
 <% end %>
@@ -62,10 +62,11 @@ EDIT
 <% end %>
 </div>
 
-<div class="delbtn"><%= link_to student, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+<div class="delbtn"><%= link_to student, method: :delete, data: { confirm: 'Are you certain? This action is irreversible'}, :remote => true, :class => 'delete_student' do %>
 DELETE
-<% end %>
 </div>
+<% end %>
+
 </div>
 
 <% end %>

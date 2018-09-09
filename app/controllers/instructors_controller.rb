@@ -36,6 +36,7 @@ class InstructorsController < ApplicationController
     @instructor.destroy
     respond_to do |format|
       format.html { redirect_to instructors_url, notice: 'INSTRUCTOR WAS DELETED SUCCESSFULLY' }
+      format.js   { render :layout => false }
     end
   end
 

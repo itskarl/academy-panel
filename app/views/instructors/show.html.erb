@@ -25,9 +25,16 @@
     <strong>Highest Education Level:</strong>
     <%= @instructor.education_level %>
   </p>
-  <div class="bar"></div>
+
   <br>
-  <p><strong>COHORTS</strong></p>
+
+
+</div>
+<div class="show-inner">
+
+  <h2>COHORTS</h2>
+  <div class="bar">
+  </div>
   <% @instructor.cohorts.each do |z| %>
     <%=link_to cohort_path(z) do %>
     <p><%= z.name %></p>
@@ -40,10 +47,8 @@
   <% end %>
 </ul>
 <% end %>
-
-</div>
-<div class="show-inner">
-<h1>ADD COHORTS</h1>
+<br>
+<h2>ADD COHORTS</h2>
 <%= form_tag({controller: :instructors, action: :update}, method: :get)%>
 <div class="form-row">
 <div class="form-symbol">

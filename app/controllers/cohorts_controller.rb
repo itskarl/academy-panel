@@ -41,6 +41,7 @@ class CohortsController < ApplicationController
     @cohort.destroy
     respond_to do |format|
       format.html { redirect_to cohorts_url, notice: 'COHORT HAS BEEN DESTROYED' }
+        format.js {render :layout => false}
     end
   end
 
@@ -48,6 +49,7 @@ class CohortsController < ApplicationController
     @cohort.update(cohort_params)
     respond_to do |format|
       format.html { redirect_to @cohort, notice: 'Cohort was successfully updated.' }
+
     end
   end
 

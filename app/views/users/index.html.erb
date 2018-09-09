@@ -58,7 +58,7 @@
     <% end %>
     </div>
 
-    <div class="delbtn"><%= link_to user, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' } do %>
+    <div class="delbtn"><%= link_to user, method: :delete, data: { confirm: 'Are you certain? This action is irreversible' }, :remote => true, :class => 'delete_user' do %>
     DELETE
     <% end %>
     </div>

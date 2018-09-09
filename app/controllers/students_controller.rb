@@ -34,6 +34,7 @@ class StudentsController < ApplicationController
     @student.destroy
     respond_to do |format|
       format.html { redirect_to students_url, notice: 'STUDENT SUCCESSFULLY DELETED' }
+      format.js   { render :layout => false }
     end
   end
 

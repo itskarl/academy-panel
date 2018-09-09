@@ -35,6 +35,7 @@ class CoursesController < ApplicationController
     @course.destroy
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'COURSE WAS SUCCESSFULLY DELETED' }
+        format.js   { render :layout => false }
     end
   end
 
