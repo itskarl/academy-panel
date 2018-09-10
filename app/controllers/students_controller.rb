@@ -18,8 +18,9 @@ class StudentsController < ApplicationController
   def edit; end
 
   def show
-    @student.cohorts << Cohort.find(params[:q][:q]) if params[:q]
     @student = Student.find(params[:id])
+    @student.cohorts << Cohort.find(params[:q][:q]) if params[:q]
+    @student.cohorts.delete(Cohort.find(params[:removecohort])) if params[:removecohort]
   end
 
   def index

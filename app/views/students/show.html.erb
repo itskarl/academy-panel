@@ -39,7 +39,12 @@
       <div class="bar"></div>
       <p>
         <% @student.cohorts.uniq.each do |x| %>
-          <%= link_to "#{x.name}", cohort_path(x.id) %><br>
+          <%= link_to "#{x.name}", cohort_path(x.id) %>
+          <%= link_to :controller => "students", :action => "update", :removecohort => x.id do %>
+          &nbsp;&nbsp; <i class="far fa-calendar-times"></i>
+          <% end %>
+          <br>
+
         <% end %>
       </p>
       <br>

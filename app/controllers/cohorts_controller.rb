@@ -27,6 +27,7 @@ class CohortsController < ApplicationController
   def show
     @cohort.students << Student.find(params[:q][:student_ids]) if params[:q]
     @cohort = Cohort.find(params[:id])
+    @cohort.students.delete(Student.find(params[:removestudent])) if params[:removestudent]
   end
 
   def index

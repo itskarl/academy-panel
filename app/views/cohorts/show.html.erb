@@ -45,7 +45,11 @@
         <p><strong>STUDENTS:</strong><br>
 
         <% @cohort.students.uniq.each do |z| %>
-          <%= link_to student_path(z.id) do%><%= z.full_name %><% end %><br>
+          <%= link_to student_path(z.id) do%><%= z.full_name %><% end %>
+          <%= link_to :controller => "cohorts", :action => "update", :removestudent => z.id do %>
+          &nbsp;&nbsp; <i class="fas fa-user-minus"></i>
+          <% end %>
+          <br>
 
         <% end %></p>
 
