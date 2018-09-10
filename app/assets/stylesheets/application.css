@@ -293,7 +293,6 @@ text-decoration: none;
 .large-profile-pic img {
   max-width: 250px;
   max-width: 250px;
-  border-radius: 125px;
 
 }
 
@@ -357,7 +356,7 @@ text-decoration: none;
 }
 .instructor-list-grid {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto;
   padding-top: 20px;
 }
 .instructor-list-grid div {
@@ -369,7 +368,7 @@ text-decoration: none;
 
 .course-list-grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   padding-top: 20px;
 }
 .course-list-grid div {

@@ -12,7 +12,7 @@
 </div>
 
 <div class="instructor-list-grid">
-
+  <div class="title-row"></div>
   <div class="title-row">
     <%= link_to "FIRST NAME", :controller => "instructors", :sort => "first_name" %>
   </div>
@@ -33,6 +33,12 @@
   </div>
 
   <% @instructors.each do |instructor| %>
+
+  <div class="tiny-profile-pic">
+    <%= link_to instructor_path(instructor.id) do %>
+  <%= image_tag("/animals/" + rand(1..50).to_s + ".png") %>
+  <% end %>
+  </div>
 
     <div><%= link_to instructor_path(instructor.id) do %><%= instructor.first_name %><% end %></div>
     <div><%= link_to instructor_path(instructor.id) do %><%= instructor.last_name %><% end %></div>

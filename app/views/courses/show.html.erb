@@ -10,6 +10,11 @@
   <p id="notice"><%= notice %></p>
 
     <div class="show-inner">
+      <center>
+        <div class="large-profile-pic">
+          <%= image_tag("/schoolpics/" + rand(1..42).to_s + ".png") %>
+        </div>
+      </center>
 
       <h2>
         <%= @course.name %>

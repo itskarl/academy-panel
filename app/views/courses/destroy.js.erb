@@ -2,5 +2,6 @@ $('.delete_course').bind('ajax:success', function() {
    $(this).closest('div').parent().fadeOut();
    $(this).closest('div').parent().prev('div').fadeOut();
    $(this).closest('div').parent().prev().prev('div').fadeOut();
+   $(this).closest('div').parent().prev().prev().prev('div').fadeOut();
 
 });

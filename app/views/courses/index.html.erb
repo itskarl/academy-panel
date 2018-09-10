@@ -14,6 +14,8 @@
 
 <div class="course-list-grid">
 
+<div class="title-row">
+</div>
   <div class="title-row">
     <%= link_to "COURSE NAME", :controller => "courses", :sort => "course" %>
   </div>
@@ -25,6 +27,12 @@
   </div>
 
 <% @courses.each do |course| %>
+
+<div class="tiny-profile-pic">
+  <%= link_to course_path(course.id) do %>
+<%= image_tag("/schoolpics/" + rand(1..42).to_s + ".png") %>
+<% end %>
+</div>
 
   <div>  <%= link_to course_path(course.id) do %><%= course.name %><%end %></div>
     <div><%= course.hours %></div>
