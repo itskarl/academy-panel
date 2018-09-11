@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
+    @user.destroy unless @user.email == "karlrodulfo@email.com"
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'USER HAS BEEN DELETED SUCESSFULLY' }
       format.js   { render :layout => false }

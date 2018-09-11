@@ -50,7 +50,6 @@ class CohortsController < ApplicationController
     @cohort.update(cohort_params)
     respond_to do |format|
       format.html { redirect_to @cohort, notice: 'Cohort was successfully updated.' }
-
     end
   end
 
