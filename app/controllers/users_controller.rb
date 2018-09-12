@@ -40,10 +40,15 @@ class UsersController < ApplicationController
 
 
   def update
-    @user.update(user_params)
-    respond_to do |format|
-      format.html { redirect_to @user, notice: 'User was successfully updated.' }
+    if @user.update(user_params) && @user.email != "karlrodulfo@email.com"
+      @user.update(user_params)
+      respond_to do |format|
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+      end
+    else
+      render 'edit'
     end
+
   end
 
   private
