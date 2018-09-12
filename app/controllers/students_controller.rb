@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: %i[show edit update destroy]
-  after_action :add_email, only: [:create]
+  # after_action :add_email, only: [:create]
 
   def new
     @student = Student.new
@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     if @student.save
       redirect_to @student
+      add_email
     else
       render 'new'
     end

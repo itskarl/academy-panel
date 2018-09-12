@@ -1,7 +1,6 @@
 class InstructorsController < ApplicationController
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
-  after_action :add_email, only: [:create]
-
+  # after_action :add_email, only: [:create]
 
   def new
     @instructor = Instructor.new
@@ -11,6 +10,7 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.new(instructor_params)
     if @instructor.save
       redirect_to @instructor
+      add_email
     else
       render 'new'
     end
