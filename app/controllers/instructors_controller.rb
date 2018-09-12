@@ -1,6 +1,6 @@
 class InstructorsController < ApplicationController
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
-  # after_action :add_email, only: [:create]
+
 
   def new
     @instructor = Instructor.new
