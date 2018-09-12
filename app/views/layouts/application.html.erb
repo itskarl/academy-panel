@@ -109,8 +109,13 @@
 </nav>
 </aside>
 <div class="main-body">
-<%=yield %>
+
+<% if logged_in? %>
+<%= yield %>
+<% end %>
+
 </div>
+
 </div>
 <footer class="site-footer"></footer>
 </div>
