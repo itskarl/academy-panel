@@ -5,7 +5,7 @@ ruby '3.2.2'
 
 gem 'rollbar'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.1'
+gem 'rails', '~> 6.1.0'
 gem 'jquery-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
